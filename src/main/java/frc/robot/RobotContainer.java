@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 // import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Direction;    // 1/26/25 bc flight sticks
 
 import frc.robot.generated.TunerConstants;
-import frc.robot.subsystems.CommandSwerveDrivetrain;
+import frc.robot.subsystems.Swerve;
 
 public class RobotContainer {
     private double MaxSpeed = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond); // kSpeedAt12Volts desired top speed
@@ -35,7 +35,7 @@ public class RobotContainer {
     private final CommandJoystick driveStick = new CommandJoystick(0);
     private final CommandJoystick steerStick = new CommandJoystick(1);
 
-    public final CommandSwerveDrivetrain drivetrain = TunerConstants.createDrivetrain();
+    public final Swerve drivetrain = TunerConstants.createDrivetrain();
 
     public RobotContainer() {
         configureBindings();
