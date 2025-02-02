@@ -15,13 +15,17 @@ public class MechConstants {
 
     public static final int algaeIntakeButtonID = 5;
     public static final int algaeOutakeButtonID = 6;
+    public static final int algaePivotUpButtonID = 7;
+    public static final int algaePivotDownButtonID = 8;
 
-    public static final int elevatorDownButtonID = 7;
-    public static final int elevatorSourceButtonID = 8;
-    public static final int elevatorL1ButtonID = 9;
-    public static final int elevatorL2ButtonID = 10;
-    public static final int elevatorL3ButtonID = 11;
-    public static final int elevatorL4ButtonID = 12;
+    public static final int elevatorDownButtonID = 9;
+    public static final int elevatorSourceButtonID = 10;
+    public static final int elevatorL1ButtonID = 11;
+    public static final int elevatorL2ButtonID = 12;
+    public static final int elevatorL3ButtonID = 13;
+    public static final int elevatorL4ButtonID = 14;
+
+    public static final int climbButtonID = 15;
 
     /* - - - - - - - - - Motor IDs - - - - - - - - - */
     public static final int elevatorMotorID = 8;
@@ -37,8 +41,8 @@ public class MechConstants {
     public static final double coralIntakeSpeed = 0.3;
     public static final double coralOutakeSpeed = -0.3;
 
-    public static final double AlgaeIntakeSpeed = 0.3;
-    public static final double AlgaeOutakeSpeed = -0.3;
+    public static final double algaeIntakeSpeed = 0.3;
+    public static final double algaeOutakeSpeed = -0.3;
 
     public static final double climbSpeed = 1.0;
 
@@ -59,7 +63,7 @@ public class MechConstants {
     public static final double algaePivotF = 0.05;
 
     /* - - - - - - - - - Motor Position Constants - - - - - - - - - */
-    public static final double climbEndPos = 40960.0;
+    public static final double climbDownPos = 40960.0;
 
     public static final double coralPivotUpPos = 0.0;
     public static final double coralPivotDownPos = 0.0;

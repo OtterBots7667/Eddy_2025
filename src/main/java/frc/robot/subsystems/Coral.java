@@ -25,7 +25,7 @@ public class Coral extends SubsystemBase{
     final PIDController elevatorPID = new PIDController(MechConstants.elevatorP, MechConstants.elevatorI, MechConstants.elevatorD);
     final TalonFX elevatorMotor = new TalonFX(MechConstants.elevatorMotorID);
 
-    double target = 0.0;
+    private double target = 0.0;
 
 
     public void periodic(){
@@ -36,25 +36,25 @@ public class Coral extends SubsystemBase{
 
             /* - - - - - - - - - - - - - Teleop Loop Code Here - - - - - - - - - - - - - */
             
-            pivotMotor.set(pivotPID.calculate(pivotEncoder.getPosition(), target));
+            pivotMotor.set(pivotPID.calculate(pivotEncoder.getPosition(), target) + MechConstants.coralPivotF);
 
             elevatorMotor.set(elevatorPID.calculate(elevatorMotor.getPosition().getValueAsDouble(), target));
 
 
             // Pivot
-            if(buttonBox.getRawButtonPressed(MechConstants.coralPivotUpButtonID)){
+            if(buttonBox.getRawButton(MechConstants.coralPivotUpButtonID)){
                 target = MechConstants.coralPivotUpPos;
             } else 
-            if(buttonBox.getRawButtonPressed(MechConstants.coralPivotDownButtonID)){
+            if(buttonBox.getRawButton(MechConstants.coralPivotDownButtonID)){
                 target = MechConstants.coralPivotDownPos;
             }
 
 
             // Intake & Outake
-            if(buttonBox.getRawButtonPressed(MechConstants.coralIntakeButtonID)){
+            if(buttonBox.getRawButton(MechConstants.coralIntakeButtonID)){
                 intakeMotor.set(MechConstants.coralIntakeSpeed);
             } else
-            if(buttonBox.getRawButtonPressed(MechConstants.coralOutakeButtonID)){
+            if(buttonBox.getRawButton(MechConstants.coralOutakeButtonID)){
                 intakeMotor.set(MechConstants.coralOutakeSpeed);
             } else {
                 intakeMotor.set(0.0);
@@ -62,22 +62,22 @@ public class Coral extends SubsystemBase{
 
 
             // Elevator
-            if(buttonBox.getRawButtonPressed(MechConstants.elevatorDownButtonID)){
+            if(buttonBox.getRawButton(MechConstants.elevatorDownButtonID)){
                 target = MechConstants.elevatorDownPos;
             } else
-            if(buttonBox.getRawButtonPressed(MechConstants.elevatorSourceButtonID)){
+            if(buttonBox.getRawButton(MechConstants.elevatorSourceButtonID)){
                 target = MechConstants.elevatorSourcePos;
             } else
-            if(buttonBox.getRawButtonPressed(MechConstants.elevatorL1ButtonID)){
+            if(buttonBox.getRawButton(MechConstants.elevatorL1ButtonID)){
                 target = MechConstants.elevatorL1Pos;
             } else
-            if(buttonBox.getRawButtonPressed(MechConstants.elevatorL2ButtonID)){
+            if(buttonBox.getRawButton(MechConstants.elevatorL2ButtonID)){
                 target = MechConstants.elevatorL2Pos;
             } else
-            if(buttonBox.getRawButtonPressed(MechConstants.elevatorL3ButtonID)){
+            if(buttonBox.getRawButton(MechConstants.elevatorL3ButtonID)){
                 target = MechConstants.elevatorL3Pos;
             } else
-            if(buttonBox.getRawButtonPressed(MechConstants.elevatorL4ButtonID)){
+            if(buttonBox.getRawButton(MechConstants.elevatorL4ButtonID)){
                 target = MechConstants.elevatorL4Pos;
             }
                 
