@@ -13,9 +13,7 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
-// import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine.Direction;    // 1/26/25 bc flight sticks
-
-import frc.robot.generated.TunerConstants;
+import frc.robot.constants.TunerConstants;
 import frc.robot.subsystems.Swerve;
 
 public class RobotContainer {

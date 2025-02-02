@@ -9,6 +9,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 public class Robot extends TimedRobot {
+  public static boolean teleopHasStarted = false;
+
   private Command m_autonomousCommand;
 
   private final RobotContainer m_robotContainer;
@@ -51,6 +53,8 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
+
+    teleopHasStarted = true;
   }
 
   @Override
