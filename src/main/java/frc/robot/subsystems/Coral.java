@@ -27,7 +27,7 @@ public class Coral extends SubsystemBase{
 
     private double target = 0.0;
 
-
+    @Override
     public void periodic(){
         
         final boolean teleopHasStarted = Robot.teleopHasStarted;

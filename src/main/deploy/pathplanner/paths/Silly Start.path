@@ -3,64 +3,69 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 7.077177526595745,
-        "y": 7.286452792553191
+        "x": 7.15,
+        "y": 6.254
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.110810810810811,
-        "y": 7.098226351351351
+        "x": 5.701773648648649,
+        "y": 5.97170608108108
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 2.1443412162162163,
-        "y": 6.95
+        "x": 1.65,
+        "y": 5.85
       },
       "prevControl": {
-        "x": 2.114695945945946,
-        "y": 7.4737331081081075
+        "x": 3.053462837837838,
+        "y": 5.843243243243243
       },
       "nextControl": {
-        "x": 2.189589518060977,
-        "y": 6.150613334075899
+        "x": 1.0867539656806846,
+        "y": 5.852711661716648
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "First Lolly"
     },
     {
       "anchor": {
-        "x": 2.4210304054054053,
-        "y": 4.331334459459459
+        "x": 2.65,
+        "y": 4.935
       },
       "prevControl": {
-        "x": 2.2427142798235864,
-        "y": 5.413762061993995
+        "x": 2.65,
+        "y": 5.646760926800063
       },
       "nextControl": {
-        "x": 2.461666999042964,
-        "y": 4.0846592331850395
+        "x": 2.65,
+        "y": 4.421148648648649
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 3.028,
-        "y": 4.183
+        "x": 1.65,
+        "y": 4.02
       },
       "prevControl": {
-        "x": 2.7839673380480563,
-        "y": 4.128703960543623
+        "x": 1.8577702702702703,
+        "y": 4.187989864864864
       },
       "nextControl": null,
       "isLocked": false,
       "linkedName": null
     }
   ],
-  "rotationTargets": [],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 1.0,
+      "rotationDegrees": 0.0
+    }
+  ],
   "constraintZones": [],
   "pointTowardsZones": [],
   "eventMarkers": [],
@@ -74,13 +79,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": -90.0
   },
   "reversed": false,
-  "folder": "Start Pos 4, 2 Coral",
+  "folder": "Silly Time",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -179.999
+    "rotation": 0.0
   },
   "useDefaultConstraints": true
 }

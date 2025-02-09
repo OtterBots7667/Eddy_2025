@@ -27,6 +27,9 @@ public class MechConstants {
 
     public static final int climbButtonID = 15;
 
+    public static final int limelightRightButtonID = 16;
+    public static final int limelightLeftButtonID = 17;
+
     /* - - - - - - - - - Motor IDs - - - - - - - - - */
     public static final int elevatorMotorID = 8;
     public static final int coralIntakeMotorID = 9;
@@ -77,4 +80,8 @@ public class MechConstants {
     public static final double elevatorL2Pos = 3.0;
     public static final double elevatorL3Pos = 4.0;
     public static final double elevatorL4Pos = 5.0;
+
+    /* - - - - - - - - - Limelight Constants - - - - - - - - - */
+    
+
 }

@@ -2,6 +2,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Robot;
 import frc.robot.constants.MechConstants;
@@ -20,7 +21,14 @@ public class Algae extends SubsystemBase{
     SparkMax algaeIntakeMotor = new SparkMax(0, MotorType.kBrushless);
     RelativeEncoder algaePivotEncoder = algaeIntakeMotor.getEncoder();
 
-      public void periodic(){
+    int eieio = 0;
+    public Command algaeDefaultCommand() {
+        return this.runOnce(() -> eieio++);
+    }
+
+
+    @Override
+    public void periodic(){
       
         boolean teleopHasStarted = Robot.teleopHasStarted;
 

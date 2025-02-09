@@ -18,8 +18,18 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 import frc.robot.constants.TunerConstants;
 import frc.robot.subsystems.Swerve;
+import frc.robot.subsystems.Algae;
+import frc.robot.subsystems.Coral;
+import frc.robot.subsystems.Climb;
+import frc.robot.subsystems.Limelight;
 
 public class RobotContainer {
+
+    private final Algae algae = new Algae();
+    private final Climb climb = new Climb();
+    private final Coral coral = new Coral();
+    private final Limelight limelight = new Limelight();
+
     private double MaxSpeed = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond); // kSpeedAt12Volts desired top speed
     private double MaxAngularRate = RotationsPerSecond.of(0.75).in(RadiansPerSecond); // 3/4 of a rotation per second max angular velocity
 
@@ -41,8 +51,15 @@ public class RobotContainer {
     /* Path follower */
     private final SendableChooser<Command> autoChooser;
 
+        int a = 0;
     public RobotContainer() {
-        autoChooser = AutoBuilder.buildAutoChooser("Start Pos 1, 4 Coral");
+        
+        algae.setDefaultCommand(algae.runOnce(() -> a = 0));
+        coral.setDefaultCommand(coral.runOnce(() -> a = 0));
+        climb.setDefaultCommand(climb.runOnce(() -> a = 0));
+        limelight.setDefaultCommand(limelight.runOnce(() -> a = 0));
+
+        autoChooser = AutoBuilder.buildAutoChooser("Default");
         SmartDashboard.putData("Auto Mode", autoChooser);
         configureBindings();
     }

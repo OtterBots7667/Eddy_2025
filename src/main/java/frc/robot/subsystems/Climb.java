@@ -15,6 +15,7 @@ public class Climb extends SubsystemBase{
     boolean teleopHasStarted = Robot.teleopHasStarted;
     TalonFX climbMotor = new TalonFX(MechConstants.climbMotorID);
 
+    @Override
     public void periodic(){
         
         boolean teleopHasStarted = Robot.teleopHasStarted;
