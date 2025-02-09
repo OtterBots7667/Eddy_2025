@@ -17,7 +17,6 @@ public class Algae extends SubsystemBase{
     SparkMax algaePivotMotor = new SparkMax(1, MotorType.kBrushless);
     private double target = 0.0;
     PIDController algaePivotPID = new PIDController(MechConstants.algaePivotP, MechConstants.algaePivotI, MechConstants.algaePivotD);
-    double algaePivotF = MechConstants.algaePivotF;
     SparkMax algaeIntakeMotor = new SparkMax(0, MotorType.kBrushless);
     RelativeEncoder algaePivotEncoder = algaeIntakeMotor.getEncoder();
 
@@ -30,7 +29,7 @@ public class Algae extends SubsystemBase{
                 /* - - - - - - - - - Teleop Loop Code Here - - - - - - - - - */
 
             // Pivot Mechanism
-            algaePivotMotor.set(algaePivotPID.calculate(algaePivotEncoder.getPosition(), target) + algaePivotF);
+            algaePivotMotor.set(algaePivotPID.calculate(algaePivotEncoder.getPosition(), target) + MechConstants.algaePivotF);
 
             if (buttonBox.getRawButton(MechConstants.algaePivotUpButtonID) && buttonBox.getRawButton(MechConstants.algaePivotDownButtonID)){
                 target = algaePivotEncoder.getPosition();
