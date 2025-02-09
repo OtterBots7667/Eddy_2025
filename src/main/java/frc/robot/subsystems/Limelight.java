@@ -44,12 +44,9 @@ public class Limelight extends SubsystemBase{
     @ Override
     public void periodic(){
         teleopHasStarted = Robot.teleopHasStarted;
-        System.out.println("Other thing runnin");
         if(teleopHasStarted){
 
         /* - - - - - - - - - Teleop Loop Code Here - - - - - - - - - */
-
-            System.out.println("IT'S RUNNING!!!!!");
 
         //read values periodically
         double x = tx;

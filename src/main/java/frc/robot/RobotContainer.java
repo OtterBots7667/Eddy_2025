@@ -16,21 +16,33 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
+
 import frc.robot.commands.LimelightDefaultCommand;
+import frc.robot.commands.AlgaeDefaultCommand;
+import frc.robot.commands.CoralDefaultCommand;
+import frc.robot.commands.ClimbDefaultCommand;
 import frc.robot.constants.TunerConstants;
 import frc.robot.subsystems.Swerve;
-// import frc.robot.subsystems.Algae;
-// import frc.robot.subsystems.Coral;
-// import frc.robot.subsystems.Climb;
+import frc.robot.subsystems.Algae;
+import frc.robot.subsystems.Coral;
+import frc.robot.subsystems.Climb;
 import frc.robot.subsystems.Limelight;
 
 public class RobotContainer {
 
-    // private final Algae algae = new Algae();
-    // private final Climb climb = new Climb();
-    // private final Coral coral = new Coral();
+    // Declaring subsystems & default commands (This took me way too long to figure out how to do - CL 2/9/25)
+    private final Algae algae = new Algae();
+    AlgaeDefaultCommand algy = new AlgaeDefaultCommand(algae);
+
+    private final Climb climb = new Climb();
+    ClimbDefaultCommand climy = new ClimbDefaultCommand(climb);
+
+    private final Coral coral = new Coral();
+    CoralDefaultCommand cory = new CoralDefaultCommand(coral);
+
     private final Limelight limelight = new Limelight();
     LimelightDefaultCommand limy = new LimelightDefaultCommand(limelight);
+
 
     private double MaxSpeed = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond); // kSpeedAt12Volts desired top speed
     private double MaxAngularRate = RotationsPerSecond.of(0.75).in(RadiansPerSecond); // 3/4 of a rotation per second max angular velocity
@@ -54,9 +66,9 @@ public class RobotContainer {
     private final SendableChooser<Command> autoChooser;
 
     public RobotContainer() {
-        // algae.setDefaultCommand(Algae.algaeDefaultCommand());
-        // coral.setDefaultCommand(Coral.coralDefaultCommand());
-        // climb.setDefaultCommand(Climb.climbDefaultCommand());
+        algae.setDefaultCommand(Algae.algaeDefaultCommand());
+        coral.setDefaultCommand(Coral.coralDefaultCommand());
+        climb.setDefaultCommand(Climb.climbDefaultCommand());
         limelight.setDefaultCommand(limy);
 
         autoChooser = AutoBuilder.buildAutoChooser("Default");

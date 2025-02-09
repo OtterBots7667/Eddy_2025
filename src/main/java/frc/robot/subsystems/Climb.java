@@ -1,45 +1,45 @@
-// package frc.robot.subsystems;
+package frc.robot.subsystems;
 
-// import edu.wpi.first.wpilibj.Joystick;
-// import edu.wpi.first.wpilibj2.command.Command;
-// import edu.wpi.first.wpilibj2.command.Commands;
-// import edu.wpi.first.wpilibj2.command.SubsystemBase;
-// import frc.robot.Robot;
-// import frc.robot.constants.MechConstants;
-// import com.ctre.phoenix6.hardware.TalonFX;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Robot;
+import frc.robot.constants.MechConstants;
+import com.ctre.phoenix6.hardware.TalonFX;
 
 
-// public class Climb extends SubsystemBase{
+public class Climb extends SubsystemBase{
     
-// static int eieio = 0;
-//     public static final Command climbDefaultCommand() {
-//         return Commands.run(() -> eieio++);
-//     }
+static int eieio = 0;
+    public static final Command climbDefaultCommand() {
+        return Commands.run(() -> eieio++);
+    }
 
-//     /* - - - - - - - - - Declare Variables & Components Here - - - - - - - - - */
-//     private static final Joystick buttonBox = MechConstants.buttonBox;
-//     boolean climbyTime = false;
-//     boolean teleopHasStarted = Robot.teleopHasStarted;
-//     TalonFX climbMotor = new TalonFX(MechConstants.climbMotorID);
+    /* - - - - - - - - - Declare Variables & Components Here - - - - - - - - - */
+    private static final Joystick buttonBox = MechConstants.buttonBox;
+    boolean climbyTime = false;
+    boolean teleopHasStarted = Robot.teleopHasStarted;
+    TalonFX climbMotor = new TalonFX(MechConstants.climbMotorID);
 
-//     @Override
-//     public void periodic(){
+    @Override
+    public void periodic(){
         
-//         boolean teleopHasStarted = Robot.teleopHasStarted;
+        boolean teleopHasStarted = Robot.teleopHasStarted;
 
-//         if(teleopHasStarted){
+        if(teleopHasStarted){
 
-//             /* - - - - - - - - - Teleop Loop Code Here - - - - - - - - - */
+            /* - - - - - - - - - Teleop Loop Code Here - - - - - - - - - */
 
-//             if(buttonBox.getRawButton(MechConstants.climbButtonID))
-//                 climbyTime = true;
-//             if(climbyTime && (climbMotor.getPosition().getValueAsDouble() < MechConstants.climbDownPos)){
-//                 climbMotor.set(MechConstants.climbSpeed);
-//             } else {
-//                 climbMotor.set(0.0);
-//             }
+            if(buttonBox.getRawButton(MechConstants.climbButtonID))
+                climbyTime = true;
+            if(climbyTime && (climbMotor.getPosition().getValueAsDouble() < MechConstants.climbDownPos)){
+                climbMotor.set(MechConstants.climbSpeed);
+            } else {
+                climbMotor.set(0.0);
+            }
 
-//         }
-//     }
+        }
+    }
 
-// }
+}
