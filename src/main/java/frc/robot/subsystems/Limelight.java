@@ -19,10 +19,10 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 public class Limelight extends SubsystemBase{
 
 
-static int eieio = 0;
-    public static final Command limelightDefaultCommand() {
-        return Commands.run(() -> eieio++);
-    }
+// static int eieio = 0;
+//     public static final Command limelightDefaultCommand() {
+//         return Commands.run(() -> eieio++);
+//     }
 
     /* - - - - - - - - - Declare Variables & Components Here - - - - - - - - - */
     private static final Joystick buttonBox = MechConstants.buttonBox;

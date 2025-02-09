@@ -12,14 +12,6 @@ import com.pathplanner.lib.commands.PathPlannerAuto;
 public class Robot extends TimedRobot {
   public static boolean teleopHasStarted = false;
 
-  // Loading Autos (I think that's what this does, idk)
-  PathPlannerAuto defaultPath = new PathPlannerAuto("Default");
-  PathPlannerAuto pos1FourCoral = new PathPlannerAuto("Start Pos 1, 4 Coral");
-  PathPlannerAuto pos2OneCoral = new PathPlannerAuto("Start Pos 2, 1 Coral");
-  PathPlannerAuto pos2FourCoral = new PathPlannerAuto("Start Pos 2, 4 Coral");
-  PathPlannerAuto pos3FourCoral = new PathPlannerAuto("Start Pos 3, 4 Coral");
-  PathPlannerAuto pos4TwoCoral = new PathPlannerAuto("Start Pos 4, 2 Coral");
-
   private Command m_autonomousCommand;
 
   private final RobotContainer m_robotContainer;
@@ -34,7 +26,16 @@ public class Robot extends TimedRobot {
   }
 
   @Override
-  public void disabledInit() {}
+  public void disabledInit() {
+    
+  // Loading Autos (I think that's what this does, idk)
+  PathPlannerAuto defaultPath = new PathPlannerAuto("Default");
+  PathPlannerAuto pos1FourCoral = new PathPlannerAuto("Start Pos 1, 4 Coral");
+  PathPlannerAuto pos2OneCoral = new PathPlannerAuto("Start Pos 2, 1 Coral");
+  PathPlannerAuto pos2FourCoral = new PathPlannerAuto("Start Pos 2, 4 Coral");
+  PathPlannerAuto pos3FourCoral = new PathPlannerAuto("Start Pos 3, 4 Coral");
+  PathPlannerAuto pos4TwoCoral = new PathPlannerAuto("Start Pos 4, 2 Coral");
+  }
 
   @Override
   public void disabledPeriodic() {}
