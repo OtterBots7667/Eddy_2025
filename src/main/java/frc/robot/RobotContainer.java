@@ -51,13 +51,12 @@ public class RobotContainer {
     /* Path follower */
     private final SendableChooser<Command> autoChooser;
 
-        int a = 0;
     public RobotContainer() {
-        
-        algae.setDefaultCommand(algae.runOnce(() -> a = 0));
-        coral.setDefaultCommand(coral.runOnce(() -> a = 0));
-        climb.setDefaultCommand(climb.runOnce(() -> a = 0));
-        limelight.setDefaultCommand(limelight.runOnce(() -> a = 0));
+
+        algae.setDefaultCommand(Algae.algaeDefaultCommand());
+        coral.setDefaultCommand(Coral.coralDefaultCommand());
+        climb.setDefaultCommand(Climb.climbDefaultCommand());
+        limelight.setDefaultCommand(Limelight.limelightDefaultCommand());
 
         autoChooser = AutoBuilder.buildAutoChooser("Default");
         SmartDashboard.putData("Auto Mode", autoChooser);

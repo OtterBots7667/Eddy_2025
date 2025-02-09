@@ -2,6 +2,8 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Robot;
 import frc.robot.constants.MechConstants;
@@ -15,6 +17,12 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class Limelight extends SubsystemBase{
+
+
+static int eieio = 0;
+    public static final Command limelightDefaultCommand() {
+        return Commands.run(() -> eieio++);
+    }
 
     /* - - - - - - - - - Declare Variables & Components Here - - - - - - - - - */
     private static final Joystick buttonBox = MechConstants.buttonBox;
