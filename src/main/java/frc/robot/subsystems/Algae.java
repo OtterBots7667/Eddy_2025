@@ -14,7 +14,7 @@ import com.revrobotics.RelativeEncoder;
 public class Algae extends SubsystemBase{
     
     /* - - - - - - - - - Declare Variables & Components Here - - - - - - - - - */
-    private static final Joystick buttonBox = MechConstants.buttonBox;
+    private static final Joystick buttonBox = MechConstants.buttonBoxMisc;
 
     SparkMax algaePivotMotor = new SparkMax(1, MotorType.kBrushless);
     private double target = 0.0;

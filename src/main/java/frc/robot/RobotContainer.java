@@ -65,10 +65,10 @@ public class RobotContainer {
     private final SendableChooser<Command> autoChooser;
 
     public RobotContainer() {
-        algae.setDefaultCommand(Algae.algaeDefaultCommand());
-        coral.setDefaultCommand(Coral.coralDefaultCommand());
-        climb.setDefaultCommand(Climb.climbDefaultCommand());
-        limelight.setDefaultCommand(limy);
+        algae.setDefaultCommand(algy);
+        coral.setDefaultCommand(cory);
+        climb.setDefaultCommand(climy);
+        limelight.setDefaultCommand(limy); // climy and limy are twins :)
 
         autoChooser = AutoBuilder.buildAutoChooser("Default");
         SmartDashboard.putData("Auto Mode", autoChooser);

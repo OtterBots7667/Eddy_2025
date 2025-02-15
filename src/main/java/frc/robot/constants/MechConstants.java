@@ -5,7 +5,8 @@ import edu.wpi.first.wpilibj.Joystick;
 public class MechConstants {
     
     /* - - - - - - - - - Joystick IDs - - - - - - - - - */
-    public static final Joystick buttonBox = new Joystick(2);
+    public static final Joystick buttonBoxCoral = new Joystick(2);
+    public static final Joystick buttonBoxMisc = new Joystick(3);
 
     /* - - - - - - - - - Button IDs - - - - - - - - - */
     public static final int coralIntakeButtonID = 1;
@@ -14,22 +15,22 @@ public class MechConstants {
     public static final int coralPivotOutButtonID = 4;
     public static final int coralPivotDownButtonID = 5;
 
-    public static final int algaeIntakeButtonID = 5;
-    public static final int algaeOutakeButtonID = 6;
-    public static final int algaePivotUpButtonID = 7;
-    public static final int algaePivotDownButtonID = 8;
+    public static final int elevatorDownButtonID = 6;
+    public static final int elevatorSourceButtonID = 7;
+    public static final int elevatorL1ButtonID = 8;
+    public static final int elevatorL2ButtonID = 9;
+    public static final int elevatorL3ButtonID = 10;
+    public static final int elevatorL4ButtonID = 11;
 
-    public static final int elevatorDownButtonID = 9;
-    public static final int elevatorSourceButtonID = 10;
-    public static final int elevatorL1ButtonID = 11;
-    public static final int elevatorL2ButtonID = 12;
-    public static final int elevatorL3ButtonID = 13;
-    public static final int elevatorL4ButtonID = 14;
+    public static final int algaeIntakeButtonID = 1;
+    public static final int algaeOutakeButtonID = 2;
+    public static final int algaePivotUpButtonID = 3;
+    public static final int algaePivotDownButtonID = 4;
 
-    public static final int climbButtonID = 15;
+    public static final int climbButtonID = 5;
 
-    public static final int limelightRightButtonID = 16;
-    public static final int limelightLeftButtonID = 17;
+    public static final int limelightRightButtonID = 6;
+    public static final int limelightLeftButtonID = 7;
 
     /* - - - - - - - - - Motor IDs - - - - - - - - - */
     public static final int elevatorMotorID = 8;

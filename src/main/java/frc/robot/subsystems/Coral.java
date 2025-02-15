@@ -22,7 +22,7 @@ static int eieio = 0;
     }
 
     /* - - - - - - - - - Declare Variables & Components Here - - - - - - - - - */
-    private static final Joystick buttonBox = MechConstants.buttonBox;
+    private static final Joystick buttonBox = MechConstants.buttonBoxCoral;
 
     final PIDController pivotPID = new PIDController(MechConstants.coralPivotP, MechConstants.coralPivotI, MechConstants.coralPivotD);
     final SparkMax pivotMotor = new SparkMax(MechConstants.coralPivotMotorID, MotorType.kBrushless);
