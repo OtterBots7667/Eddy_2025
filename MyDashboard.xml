@@ -27,7 +27,7 @@
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.CameraServerViewer">
 		<location x="485" y="4"/>
 		<width>748</width>
-		<height>499</height>
+		<height>477</height>
 		<property name="Camera Choice" value=""/>
 	</static-widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Image">
@@ -43,6 +43,6 @@
 	<hidden field="Module 2"/>
 	<hidden field="Module 3"/>
 	<hidden field="Module 0"/>
-	<hidden field="Module 1"/>
 	<hidden field="Alerts"/>
+	<hidden field="Module 1"/>
 </xml>
