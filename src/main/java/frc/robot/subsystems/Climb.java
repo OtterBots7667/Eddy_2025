@@ -17,7 +17,7 @@ static int eieio = 0;
     }
 
     /* - - - - - - - - - Declare Variables & Components Here - - - - - - - - - */
-    private static final Joystick buttonBox = MechConstants.buttonBoxMisc;
+    private static final Joystick buttonBox = MechConstants.buttonBox;
     boolean climbyTime = false;
     boolean teleopHasStarted = Robot.teleopHasStarted;
     TalonFX climbMotor = new TalonFX(MechConstants.climbMotorID);

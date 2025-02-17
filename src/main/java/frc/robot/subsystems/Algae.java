@@ -14,7 +14,7 @@ import com.revrobotics.RelativeEncoder;
 public class Algae extends SubsystemBase{
     
     /* - - - - - - - - - Declare Variables & Components Here - - - - - - - - - */
-    private static final Joystick buttonBox = MechConstants.buttonBoxMisc;
+    private static final Joystick buttonBox = MechConstants.buttonBox;
 
     SparkMax algaePivotMotor = new SparkMax(1, MotorType.kBrushless);
     private double target = 0.0;
@@ -40,20 +40,15 @@ public class Algae extends SubsystemBase{
             // Pivot Mechanism
             algaePivotMotor.set(algaePivotPID.calculate(algaePivotEncoder.getPosition(), target) + MechConstants.algaePivotF);
 
-            if (buttonBox.getRawButton(MechConstants.algaePivotUpButtonID) && buttonBox.getRawButton(MechConstants.algaePivotDownButtonID)){
-                target = algaePivotEncoder.getPosition();
-            } else if (buttonBox.getRawButton(MechConstants.algaePivotUpButtonID)){
-                target = MechConstants.algaePivotUpPos;
-            } else if (buttonBox.getRawButton(MechConstants.algaePivotDownButtonID)){
-                target = MechConstants.algaePivotDownPos;
+            if (buttonBox.getRawButton(MechConstants.algaeRetractButtonID)){
+                target = MechConstants.algaeRetractPos;
             }
             
             // This is the motor that will intake the algae
 
-            if ( buttonBox.getRawButton(MechConstants.algaeIntakeButtonID) && buttonBox.getRawButton(MechConstants.algaeOutakeButtonID)){
-                algaeIntakeMotor.set(0.0);
-            } else if(buttonBox.getRawButton(MechConstants.algaeIntakeButtonID)){
+            if(buttonBox.getRawButton(MechConstants.algaeIntakeButtonID)){
                 algaeIntakeMotor.set (MechConstants.algaeIntakeSpeed);
+                target = MechConstants.algaeExtendPos;
             } else if (buttonBox.getRawButton(MechConstants.algaeOutakeButtonID)){
                 algaeIntakeMotor.set(MechConstants.algaeOutakeSpeed); 
             } else {

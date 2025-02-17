@@ -5,32 +5,32 @@ import edu.wpi.first.wpilibj.Joystick;
 public class MechConstants {
     
     /* - - - - - - - - - Joystick IDs - - - - - - - - - */
-    public static final Joystick buttonBoxCoral = new Joystick(2);
-    public static final Joystick buttonBoxMisc = new Joystick(3);
+    public static final Joystick buttonBox = new Joystick(2);
+    public static final Joystick driveStick = new Joystick(0);
+    
 
     /* - - - - - - - - - Button IDs - - - - - - - - - */
     public static final int coralIntakeButtonID = 1;
     public static final int coralOutakeButtonID = 2;
-    public static final int coralPivotInButtonID = 3;
-    public static final int coralPivotOutButtonID = 4;
-    public static final int coralPivotDownButtonID = 5;
 
-    public static final int elevatorDownButtonID = 6;
-    public static final int elevatorSourceButtonID = 7;
-    public static final int elevatorL1ButtonID = 8;
-    public static final int elevatorL2ButtonID = 9;
-    public static final int elevatorL3ButtonID = 10;
-    public static final int elevatorL4ButtonID = 11;
+    public static final int elevatorDownButtonID = 3;
+    public static final int elevatorSourceButtonID = 4;
+    public static final int elevatorL1ButtonID = 5;
+    public static final int elevatorL2ButtonID = 6;
+    public static final int elevatorL3ButtonID = 7;
+    public static final int elevatorL4ButtonID = 8;
 
-    public static final int algaeIntakeButtonID = 1;
-    public static final int algaeOutakeButtonID = 2;
-    public static final int algaePivotUpButtonID = 3;
-    public static final int algaePivotDownButtonID = 4;
+    public static final int algaeIntakeButtonID = 9;
+    public static final int algaeOutakeButtonID = 10;
+    public static final int algaeRetractButtonID = 11;
 
-    public static final int climbButtonID = 5;
+    public static final int overrideJoystick_X_ID = 0;
+    public static final int overrideJoystick_Y_ID = 1;
 
-    public static final int limelightRightButtonID = 6;
-    public static final int limelightLeftButtonID = 7;
+    public static final int climbButtonID = 12;
+
+    public static final int limelightRightButtonID = 1;
+    public static final int limelightLeftButtonID = 2;
 
     /* - - - - - - - - - Motor IDs - - - - - - - - - */
     public static final int elevatorMotorID = 8;
@@ -75,8 +75,8 @@ public class MechConstants {
     public static final double coralPivotDownPos = 2.0;
     public static final int coralPivotTolerance = 50;   // Must be positive
 
-    public static final double algaePivotUpPos = 0.0;
-    public static final double algaePivotDownPos = 1.0;
+    public static final double algaeRetractPos = 0.0;
+    public static final double algaeExtendPos = 1.0;
 
     public static final double elevatorDownPos = 0.0;
     public static final double elevatorSourcePos = 1.0;

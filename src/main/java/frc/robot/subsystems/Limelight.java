@@ -25,7 +25,7 @@ public class Limelight extends SubsystemBase{
 //     }
 
     /* - - - - - - - - - Declare Variables & Components Here - - - - - - - - - */
-    private static final Joystick buttonBox = MechConstants.buttonBoxMisc;
+    private static final Joystick buttonBox = MechConstants.driveStick;
     public boolean teleopHasStarted = Robot.teleopHasStarted;
 
     double KpAim = -1.0;

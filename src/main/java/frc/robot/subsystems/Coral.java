@@ -22,7 +22,7 @@ static int eieio = 0;
     }
 
     /* - - - - - - - - - Declare Variables & Components Here - - - - - - - - - */
-    private static final Joystick buttonBox = MechConstants.buttonBoxCoral;
+    private static final Joystick buttonBox = MechConstants.buttonBox;
 
     final PIDController pivotPID = new PIDController(MechConstants.coralPivotP, MechConstants.coralPivotI, MechConstants.coralPivotD);
     final SparkMax pivotMotor = new SparkMax(MechConstants.coralPivotMotorID, MotorType.kBrushless);
@@ -45,36 +45,6 @@ static int eieio = 0;
         if(teleopHasStarted){
 
             /* - - - - - - - - - - - - - Teleop Loop Code Here - - - - - - - - - - - - - */
-            
-            // Pivot PID
-            if(!pivotCutPower){
-            pivotMotor.set(pivotPID.calculate(pivotEncoder.getPosition(), pivotTarget) + MechConstants.coralPivotF);
-            }
-
-            if(pivotTarget == MechConstants.coralPivotDownPos){
-                if(pivotEncoder.getPosition() < MechConstants.coralPivotDownPos + MechConstants.coralPivotTolerance &&
-                pivotEncoder.getPosition() > MechConstants.coralPivotDownPos - MechConstants.coralPivotTolerance){
-                    pivotCutPower = true;
-                }
-            }
-
-            if(pivotCutPower){
-                pivotMotor.set(0.0);
-            }
-
-
-            // Pivot position targeter
-            if(buttonBox.getRawButton(MechConstants.coralPivotInButtonID)){
-                pivotTarget = MechConstants.coralPivotInPos;
-                pivotCutPower = false;
-            } else 
-            if(buttonBox.getRawButton(MechConstants.coralPivotOutButtonID)){
-                pivotTarget = MechConstants.coralPivotOutPos;
-                pivotCutPower = false;
-            } else 
-            if(buttonBox.getRawButton(MechConstants.coralPivotDownButtonID)){
-                pivotTarget = MechConstants.coralPivotDownPos;
-            }
 
 
             // Intake & Outake
@@ -87,8 +57,24 @@ static int eieio = 0;
                 intakeMotor.set(0.0);
             }
 
-
             
+            
+            // Pivot PID
+            if(!pivotCutPower){
+                pivotMotor.set(pivotPID.calculate(pivotEncoder.getPosition(), pivotTarget) + MechConstants.coralPivotF);
+            }
+    
+            if(pivotTarget == MechConstants.coralPivotDownPos){
+                if(pivotEncoder.getPosition() < MechConstants.coralPivotDownPos + MechConstants.coralPivotTolerance &&
+                    pivotEncoder.getPosition() > MechConstants.coralPivotDownPos - MechConstants.coralPivotTolerance){
+                    pivotCutPower = true;
+                }
+            }
+    
+            if(pivotCutPower){
+                pivotMotor.set(0.0);
+            }
+
             // Elevator PID
 
             if(!elevatorCutPower){
@@ -107,28 +93,57 @@ static int eieio = 0;
                 }
 
 
-            // Elevator position targeter
+            // Elevator and Pivot position targeter
             if(buttonBox.getRawButton(MechConstants.elevatorDownButtonID)){
                 elevatorTarget = MechConstants.elevatorDownPos;
+                pivotTarget = MechConstants.coralPivotDownPos;
             } else
             if(buttonBox.getRawButton(MechConstants.elevatorSourceButtonID)){
                 elevatorTarget = MechConstants.elevatorSourcePos;
                 elevatorCutPower = false;
+                pivotTarget = MechConstants.coralPivotInPos;
+                pivotCutPower = false;
             } else
             if(buttonBox.getRawButton(MechConstants.elevatorL1ButtonID)){
                 elevatorTarget = MechConstants.elevatorL1Pos;
                 elevatorCutPower = false;
+                pivotTarget = MechConstants.coralPivotOutPos;
+                pivotCutPower = false;
             } else
             if(buttonBox.getRawButton(MechConstants.elevatorL2ButtonID)){
                 elevatorTarget = MechConstants.elevatorL2Pos;
                 elevatorCutPower = false;
+                pivotTarget = MechConstants.coralPivotOutPos;
+                pivotCutPower = false;
             } else
             if(buttonBox.getRawButton(MechConstants.elevatorL3ButtonID)){
                 elevatorTarget = MechConstants.elevatorL3Pos;
                 elevatorCutPower = false;
+                pivotTarget = MechConstants.coralPivotOutPos;
+                pivotCutPower = false;
             } else
             if(buttonBox.getRawButton(MechConstants.elevatorL4ButtonID)){
                 elevatorTarget = MechConstants.elevatorL4Pos;
+                elevatorCutPower = false;
+                pivotTarget = MechConstants.coralPivotOutPos;
+                pivotCutPower = false;
+            }
+
+            // Pivot manual override
+            if(buttonBox.getRawAxis(MechConstants.overrideJoystick_X_ID) > 0.5){
+                pivotTarget++;
+                pivotCutPower = false;
+            } else if(buttonBox.getRawAxis(MechConstants.overrideJoystick_X_ID) < -0.5){
+                pivotTarget--;
+                pivotCutPower = false;
+            }
+
+            // Elevator manual override
+            if(buttonBox.getRawAxis(MechConstants.overrideJoystick_Y_ID) < -0.5){
+                elevatorTarget++;
+                elevatorCutPower = false;
+            } else if(buttonBox.getRawAxis(MechConstants.overrideJoystick_Y_ID) > 0.5){
+                elevatorTarget--;
                 elevatorCutPower = false;
             }
 
