@@ -19,12 +19,6 @@
                 "data": {
                   "pathName": "Start to Reef (C1)"
                 }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Pivot (Start Pos to Score)"
-                }
               }
             ]
           }
@@ -36,9 +30,27 @@
           }
         },
         {
+          "type": "wait",
+          "data": {
+            "waitTime": 1.0
+          }
+        },
+        {
           "type": "named",
           "data": {
             "name": "Outake"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 1.0
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Intake Off"
           }
         },
         {

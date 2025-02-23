@@ -29,8 +29,8 @@ public class MechConstants {
 
     public static final int climbButtonID = 12;
 
-    public static final int limelightRightButtonID = 1;
-    public static final int limelightLeftButtonID = 2;
+    public static final int limelightRightButtonID = 4;
+    public static final int limelightLeftButtonID = 3;
 
     /* - - - - - - - - - Motor IDs - - - - - - - - - */
     public static final int elevatorMotorID = 8;

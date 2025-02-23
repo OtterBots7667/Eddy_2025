@@ -27,6 +27,7 @@ import frc.robot.subsystems.Coral;
 import frc.robot.subsystems.Climb;
 import frc.robot.subsystems.Limelight;
 import com.pathplanner.lib.auto.NamedCommands;
+import com.pathplanner.lib.commands.PathPlannerAuto;
 
 public class RobotContainer {
 
@@ -69,6 +70,27 @@ public class RobotContainer {
     private final SendableChooser<Command> autoChooser;
 
     public RobotContainer() {
+
+        NamedCommands.registerCommand("Pivot (Start Pos to Score)", cory);
+        NamedCommands.registerCommand("Elevator to L4", coral.elevatorL4Command());
+        NamedCommands.registerCommand("Outake", coral.coralOutakeCommand());
+        NamedCommands.registerCommand("Elevator Down", coral.elevatorDownCommand());
+        NamedCommands.registerCommand("Pivot (Score to Intake)", cory);
+        NamedCommands.registerCommand("Elevator to Intake", coral.elevatorSourceCommand());
+        NamedCommands.registerCommand("Intake", coral.coralIntakeCommand());
+        NamedCommands.registerCommand("Pivot (Intake to Score)", cory);
+        NamedCommands.registerCommand("Intake Off", coral.coralStopIntakeCommand());
+
+
+        // Loading Autos (I think that's what this does, idk)
+      PathPlannerAuto defaultPath = new PathPlannerAuto("Default");
+      PathPlannerAuto pos1FourCoral = new PathPlannerAuto("Start Pos 1, 4 Coral");
+      PathPlannerAuto pos2OneCoral = new PathPlannerAuto("Start Pos 2, 1 Coral");
+      PathPlannerAuto pos2FourCoral = new PathPlannerAuto("Start Pos 2, 4 Coral");
+      PathPlannerAuto pos3FourCoral = new PathPlannerAuto("Start Pos 3, 4 Coral");
+      PathPlannerAuto pos4TwoCoral = new PathPlannerAuto("Start Pos 4, 2 Coral");
+
+
         algae.setDefaultCommand(algy);
         coral.setDefaultCommand(cory);
         climb.setDefaultCommand(climy);
