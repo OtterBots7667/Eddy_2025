@@ -67,18 +67,19 @@ public class RobotContainer {
     public final Swerve drivetrain = TunerConstants.createDrivetrain();
 
     /* Path follower */
-    private final SendableChooser<Command> autoChooser;
+    public static SendableChooser<Command> autoChooser;
 
     public RobotContainer() {
 
-        NamedCommands.registerCommand("Pivot (Start Pos to Score)", cory);
-        NamedCommands.registerCommand("Elevator to L4", coral.elevatorL4Command());
-        NamedCommands.registerCommand("Outake", coral.coralOutakeCommand());
+        
         NamedCommands.registerCommand("Elevator Down", coral.elevatorDownCommand());
-        NamedCommands.registerCommand("Pivot (Score to Intake)", cory);
         NamedCommands.registerCommand("Elevator to Intake", coral.elevatorSourceCommand());
+        NamedCommands.registerCommand("Elevator to L1", coral.elevatorL1Command());
+        NamedCommands.registerCommand("Elevator to L2", coral.elevatorL2Command());
+        NamedCommands.registerCommand("Elevator to L3", coral.elevatorL3Command());
+        NamedCommands.registerCommand("Elevator to L4", coral.elevatorL4Command());
         NamedCommands.registerCommand("Intake", coral.coralIntakeCommand());
-        NamedCommands.registerCommand("Pivot (Intake to Score)", cory);
+        NamedCommands.registerCommand("Outake", coral.coralOutakeCommand());
         NamedCommands.registerCommand("Intake Off", coral.coralStopIntakeCommand());
 
 

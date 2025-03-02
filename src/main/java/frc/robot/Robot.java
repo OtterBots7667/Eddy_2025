@@ -19,9 +19,26 @@ public class Robot extends TimedRobot {
     m_robotContainer = new RobotContainer();
   }
 
+  int chooserClock = 0; // Clock for printing out the chosen autonomous routine
+  String oldAutoChosen = "waiting...";
+  String newAutoChosen = "waiting...";
+
   @Override
   public void robotPeriodic() {
+
     CommandScheduler.getInstance().run(); 
+
+
+    newAutoChosen = RobotContainer.autoChooser.getSelected().getName();
+
+    if (!newAutoChosen.equals(oldAutoChosen) || chooserClock % 1500 == 0) {
+      System.out.println("Auto Chosen: - " + newAutoChosen);    // Print out chosen auto if auto changes
+    }                                                           // or every 30 seconds
+
+    oldAutoChosen = RobotContainer.autoChooser.getSelected().getName();
+
+    chooserClock++;
+
   }
 
   @Override

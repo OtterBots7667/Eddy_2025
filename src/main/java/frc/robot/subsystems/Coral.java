@@ -255,6 +255,7 @@ static int eieio = 0;
                 pivotCutPower = false;
             } else
             if(elevatorAutoPos.equals("L4")){
+                System.out.println("IT'S WORKING!!!!!!!!!!!!!!!");
                 elevatorTarget = MechConstants.elevatorL4Pos;
                 elevatorCutPower = false;
                 pivotTarget = MechConstants.coralPivotOutPos;
