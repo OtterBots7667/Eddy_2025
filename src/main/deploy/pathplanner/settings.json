@@ -4,11 +4,7 @@
   "holonomicMode": true,
   "pathFolders": [
     "Default",
-    "Silly Time",
-    "Start Pos 1, 4 Coral",
     "Start Pos 2, 1 Coral",
-    "Start Pos 2, 4 Coral",
-    "Start Pos 3, 4 Coral",
     "Start Pos 4, 2 Coral"
   ],
   "autoFolders": [],

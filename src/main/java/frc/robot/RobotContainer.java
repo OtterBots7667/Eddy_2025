@@ -73,7 +73,7 @@ public class RobotContainer {
 
         
         NamedCommands.registerCommand("Elevator Down", coral.elevatorDownCommand());
-        NamedCommands.registerCommand("Elevator to Intake", coral.elevatorSourceCommand());
+        NamedCommands.registerCommand("Elevator to Source", coral.elevatorSourceCommand());
         NamedCommands.registerCommand("Elevator to L1", coral.elevatorL1Command());
         NamedCommands.registerCommand("Elevator to L2", coral.elevatorL2Command());
         NamedCommands.registerCommand("Elevator to L3", coral.elevatorL3Command());
@@ -85,11 +85,8 @@ public class RobotContainer {
 
         // Loading Autos (I think that's what this does, idk)
       PathPlannerAuto defaultPath = new PathPlannerAuto("Default");
-      PathPlannerAuto pos1FourCoral = new PathPlannerAuto("Start Pos 1, 4 Coral");
-      PathPlannerAuto pos2OneCoral = new PathPlannerAuto("Start Pos 2, 1 Coral");
-      PathPlannerAuto pos2FourCoral = new PathPlannerAuto("Start Pos 2, 4 Coral");
-      PathPlannerAuto pos3FourCoral = new PathPlannerAuto("Start Pos 3, 4 Coral");
-      PathPlannerAuto pos4TwoCoral = new PathPlannerAuto("Start Pos 4, 2 Coral");
+      PathPlannerAuto midStart2Coral = new PathPlannerAuto("Mid Start, 1 Coral");
+      PathPlannerAuto leftStart2Coral = new PathPlannerAuto("Left Start, 2 Coral");
 
 
         algae.setDefaultCommand(algy);

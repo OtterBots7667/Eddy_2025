@@ -8,8 +8,8 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.110810810810811,
-        "y": 7.098226351351351
+        "x": 4.11081081081081,
+        "y": 7.167398648648648
       },
       "isLocked": false,
       "linkedName": null
@@ -20,28 +20,12 @@
         "y": 6.95
       },
       "prevControl": {
-        "x": 2.114695945945946,
-        "y": 7.4737331081081075
+        "x": 2.4421243025745984,
+        "y": 7.381856971758996
       },
       "nextControl": {
-        "x": 2.189589518060977,
-        "y": 6.150613334075899
-      },
-      "isLocked": false,
-      "linkedName": null
-    },
-    {
-      "anchor": {
-        "x": 2.4210304054054053,
-        "y": 4.331334459459459
-      },
-      "prevControl": {
-        "x": 2.2427142798235864,
-        "y": 5.413762061993995
-      },
-      "nextControl": {
-        "x": 2.461666999042964,
-        "y": 4.0846592331850395
+        "x": 1.3960227272727277,
+        "y": 5.864758522727272
       },
       "isLocked": false,
       "linkedName": null
@@ -52,8 +36,8 @@
         "y": 4.183
       },
       "prevControl": {
-        "x": 2.7839673380480563,
-        "y": 4.128703960543623
+        "x": 2.851875,
+        "y": 4.398934659090909
       },
       "nextControl": null,
       "isLocked": false,
@@ -61,9 +45,30 @@
     }
   ],
   "rotationTargets": [],
-  "constraintZones": [],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 1.5,
+      "maxWaypointRelativePos": 2.0,
+      "constraints": {
+        "maxVelocity": 3.0,
+        "maxAcceleration": 3.0,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 1247.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
   "pointTowardsZones": [],
-  "eventMarkers": [],
+  "eventMarkers": [
+    {
+      "name": "Elevator to L4",
+      "waypointRelativePos": 1.65,
+      "endWaypointRelativePos": null,
+      "command": null
+    }
+  ],
   "globalConstraints": {
     "maxVelocity": 5.21,
     "maxAcceleration": 8.5,
@@ -80,7 +85,7 @@
   "folder": "Start Pos 4, 2 Coral",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -179.999
+    "rotation": 0.0
   },
   "useDefaultConstraints": true
 }
