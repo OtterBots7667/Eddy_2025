@@ -55,9 +55,9 @@
   ],
   "globalConstraints": {
     "maxVelocity": 5.21,
-    "maxAcceleration": 8.5,
+    "maxAcceleration": 11.8,
     "maxAngularVelocity": 540.0,
-    "maxAngularAcceleration": 1247.0,
+    "maxAngularAcceleration": 955.0,
     "nominalVoltage": 12.0,
     "unlimited": false
   },
@@ -66,7 +66,7 @@
     "rotation": 0.0
   },
   "reversed": false,
-  "folder": "Start Pos 4, 2 Coral",
+  "folder": "C1",
   "idealStartingState": {
     "velocity": 0,
     "rotation": 126.86989764584402
