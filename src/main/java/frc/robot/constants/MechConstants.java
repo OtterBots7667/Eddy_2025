@@ -10,18 +10,18 @@ public class MechConstants {
     
 
     /* - - - - - - - - - Button IDs - - - - - - - - - */
-    public static final int coralIntakeButtonID = 1;
-    public static final int coralOutakeButtonID = 2;
+    public static final int coralIntakeButtonID = 8;
+    public static final int coralOutakeButtonID = 7;
 
-    public static final int elevatorDownButtonID = 3;
-    public static final int elevatorSourceButtonID = 4;
-    public static final int elevatorL1ButtonID = 5;
-    public static final int elevatorL2ButtonID = 6;
-    public static final int elevatorL3ButtonID = 7;
-    public static final int elevatorL4ButtonID = 8;
+    public static final int elevatorDownButtonID = 6;
+    public static final int elevatorSourceButtonID = 5;
+    public static final int elevatorL1ButtonID = 1;
+    public static final int elevatorL2ButtonID = 2;
+    public static final int elevatorL3ButtonID = 3;
+    public static final int elevatorL4ButtonID = 4;
 
-    public static final int algaeIntakeButtonID = 9;
-    public static final int algaeOutakeButtonID = 10;
+    public static final int algaeIntakeButtonID = 10;
+    public static final int algaeOutakeButtonID = 9;
     public static final int algaeRetractButtonID = 11;
 
     public static final int overrideJoystick_X_ID = 0;
