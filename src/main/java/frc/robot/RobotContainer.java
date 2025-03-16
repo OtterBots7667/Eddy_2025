@@ -97,6 +97,9 @@ public class RobotContainer {
         autoChooser = AutoBuilder.buildAutoChooser("Default");
         SmartDashboard.putData("Auto Mode", autoChooser);
         configureBindings();
+
+        coral.resetEncoders();
+        climb.resetEncoder();
     }
 
     private void configureBindings() {

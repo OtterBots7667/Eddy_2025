@@ -3,58 +3,42 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 7.077177526595745,
-        "y": 0.766
+        "x": 5.039695945945946,
+        "y": 5.289864864864865
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.110810159240247,
-        "y": 0.8850379081887249
+        "x": 4.165055171495234,
+        "y": 5.802016957192573
       },
       "isLocked": false,
-      "linkedName": "Start R"
+      "linkedName": "Reef J"
     },
     {
       "anchor": {
-        "x": 2.1443412162162163,
-        "y": 1.102
+        "x": 1.82,
+        "y": 7.356
       },
       "prevControl": {
-        "x": 2.4421253941027867,
-        "y": 0.6701437808964734
-      },
-      "nextControl": {
-        "x": 1.3960199843005374,
-        "y": 2.1872395858758376
-      },
-      "isLocked": false,
-      "linkedName": null
-    },
-    {
-      "anchor": {
-        "x": 3.022240691489362,
-        "y": 3.873304521276595
-      },
-      "prevControl": {
-        "x": 2.8461159543609797,
-        "y": 3.6573696477772804
+        "x": 3.451666917001029,
+        "y": 6.3961774104270965
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "Reef B"
+      "linkedName": "Source L"
     }
   ],
   "rotationTargets": [],
   "constraintZones": [
     {
       "name": "Constraints Zone",
-      "minWaypointRelativePos": 1.5,
-      "maxWaypointRelativePos": 2.0,
+      "minWaypointRelativePos": 0.85,
+      "maxWaypointRelativePos": 1.0,
       "constraints": {
         "maxVelocity": 3.0,
         "maxAcceleration": 3.0,
-        "maxAngularVelocity": 540.0,
-        "maxAngularAcceleration": 1247.0,
+        "maxAngularVelocity": 300.0,
+        "maxAngularAcceleration": 600.0,
         "nominalVoltage": 12.0,
         "unlimited": false
       }
@@ -63,8 +47,8 @@
   "pointTowardsZones": [],
   "eventMarkers": [
     {
-      "name": "Elevator to L4",
-      "waypointRelativePos": 1.65,
+      "name": "Elevator to Source",
+      "waypointRelativePos": 0.8,
       "endWaypointRelativePos": null,
       "command": null
     }
@@ -79,13 +63,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": 125.00000000000001
   },
   "reversed": false,
-  "folder": "C2",
+  "folder": "D1",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": 0.0
+    "rotation": -119.99999999999999
   },
   "useDefaultConstraints": true
 }

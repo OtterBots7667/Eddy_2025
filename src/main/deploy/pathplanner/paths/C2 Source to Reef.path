@@ -12,20 +12,20 @@
         "y": 1.2480679036821514
       },
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Source R"
     },
     {
       "anchor": {
-        "x": 3.022240691489362,
-        "y": 4.179
+        "x": 3.028,
+        "y": 4.183
       },
       "prevControl": {
-        "x": 2.870312388271042,
-        "y": 3.657622119238872
+        "x": 2.8760716967816804,
+        "y": 3.6616221192388716
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Reef A"
     }
   ],
   "rotationTargets": [],
@@ -55,9 +55,9 @@
   ],
   "globalConstraints": {
     "maxVelocity": 5.21,
-    "maxAcceleration": 11.8,
+    "maxAcceleration": 10.8,
     "maxAngularVelocity": 540.0,
-    "maxAngularAcceleration": 955.0,
+    "maxAngularAcceleration": 1250.0,
     "nominalVoltage": 12.0,
     "unlimited": false
   },
@@ -69,7 +69,7 @@
   "folder": "C2",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -126.327
+    "rotation": -125.00000000000001
   },
   "useDefaultConstraints": true
 }

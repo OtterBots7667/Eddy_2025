@@ -22,6 +22,12 @@ static int eieio = 0;
     boolean teleopHasStarted = Robot.teleopHasStarted;
     TalonFX climbMotor = new TalonFX(MechConstants.climbMotorID);
 
+
+    public void resetEncoder(){
+        climbMotor.setPosition(0.0);
+    }
+
+
     @Override
     public void periodic(){
         
@@ -31,9 +37,11 @@ static int eieio = 0;
 
             /* - - - - - - - - - Teleop Loop Code Here - - - - - - - - - */
 
-            if(buttonBox.getRawButton(MechConstants.climbButtonID))
+            if(buttonBox.getRawButton(MechConstants.climbButtonID)){
                 climbyTime = true;
-            if(climbyTime && (climbMotor.getPosition().getValueAsDouble() < MechConstants.climbDownPos)){
+            }
+            
+            if(climbyTime && (climbMotor.getPosition().getValueAsDouble() > MechConstants.climbDownPos)){
                 climbMotor.set(MechConstants.climbSpeed);
             } else {
                 climbMotor.set(0.0);

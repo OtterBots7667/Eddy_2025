@@ -34,11 +34,12 @@ static int eieio = 0;
 
     private double pivotTarget = 0.0;
     private double elevatorTarget = 0.0;
-    private boolean pivotCutPower = true;
-    private boolean elevatorCutPower = true;
 
+    double pivotPos = 0.0;
+    double elevatorPos = 0.0;
 
     String elevatorAutoPos = "";
+
 
 
     public Command elevatorDownCommand() {
@@ -78,11 +79,20 @@ static int eieio = 0;
     }
 
 
+    public void resetEncoders(){
+        pivotEncoder.setPosition(0.0);
+        elevatorMotor.setPosition(0.0);
+    }
+
 
     @Override
     public void periodic(){
         
         boolean teleopHasStarted = Robot.teleopHasStarted;
+
+        pivotPos = pivotEncoder.getPosition() * 1000;
+
+        elevatorPos = elevatorMotor.getPosition().getValueAsDouble() * 100;
 
         if(teleopHasStarted){
 
@@ -102,164 +112,108 @@ static int eieio = 0;
             
             
             // Pivot PID
-            if(!pivotCutPower){
-                pivotMotor.set(pivotPID.calculate(pivotEncoder.getPosition(), pivotTarget) + MechConstants.coralPivotF);
-            }
-    
-            if(pivotTarget == MechConstants.coralPivotDownPos){
-                if(pivotEncoder.getPosition() < MechConstants.coralPivotDownPos + MechConstants.coralPivotTolerance &&
-                    pivotEncoder.getPosition() > MechConstants.coralPivotDownPos - MechConstants.coralPivotTolerance){
-                    pivotCutPower = true;
-                }
-            }
-    
-            if(pivotCutPower){
+            if(pivotTarget != MechConstants.coralPivotDownPos){
+                pivotMotor.set(pivotPID.calculate(pivotPos, pivotTarget) + MechConstants.coralPivotF);
+            } else {
                 pivotMotor.set(0.0);
             }
+    
 
             // Elevator PID
 
-            if(!elevatorCutPower){
-                elevatorMotor.set(elevatorPID.calculate(elevatorMotor.getPosition().getValueAsDouble(), elevatorTarget));
+            if(elevatorTarget != MechConstants.elevatorDownPos || elevatorPos <= MechConstants.elevatorDownPos - 500){
+                elevatorMotor.set(elevatorPID.calculate(elevatorPos, elevatorTarget) + MechConstants.elevatorF);
+            } else {
+              elevatorMotor.set(0.0);
+              System.out.println("MOTOR STOPPED");
             }
-    
-                if(elevatorTarget == MechConstants.elevatorDownPos){
-                    if(elevatorMotor.getPosition().getValueAsDouble() < MechConstants.elevatorDownPos + MechConstants.elevatorTolerance &&
-                    elevatorMotor.getPosition().getValueAsDouble() > MechConstants.elevatorDownPos - MechConstants.elevatorTolerance){
-                        pivotCutPower = true;
-                    }
-                }
-    
-                if(elevatorCutPower){
-                    elevatorMotor.set(0.0);
-                }
 
 
             // Elevator and Pivot position targeter
             if(buttonBox.getRawButton(MechConstants.elevatorDownButtonID)){
                 elevatorTarget = MechConstants.elevatorDownPos;
-                pivotTarget = MechConstants.coralPivotDownPos;
+                pivotTarget = MechConstants.coralPivotInPos;
             } else
             if(buttonBox.getRawButton(MechConstants.elevatorSourceButtonID)){
                 elevatorTarget = MechConstants.elevatorSourcePos;
-                elevatorCutPower = false;
                 pivotTarget = MechConstants.coralPivotInPos;
-                pivotCutPower = false;
             } else
             if(buttonBox.getRawButton(MechConstants.elevatorL1ButtonID)){
                 elevatorTarget = MechConstants.elevatorL1Pos;
-                elevatorCutPower = false;
                 pivotTarget = MechConstants.coralPivotOutPos;
-                pivotCutPower = false;
             } else
             if(buttonBox.getRawButton(MechConstants.elevatorL2ButtonID)){
                 elevatorTarget = MechConstants.elevatorL2Pos;
-                elevatorCutPower = false;
                 pivotTarget = MechConstants.coralPivotOutPos;
-                pivotCutPower = false;
             } else
             if(buttonBox.getRawButton(MechConstants.elevatorL3ButtonID)){
                 elevatorTarget = MechConstants.elevatorL3Pos;
-                elevatorCutPower = false;
                 pivotTarget = MechConstants.coralPivotOutPos;
-                pivotCutPower = false;
             } else
             if(buttonBox.getRawButton(MechConstants.elevatorL4ButtonID)){
                 elevatorTarget = MechConstants.elevatorL4Pos;
-                elevatorCutPower = false;
                 pivotTarget = MechConstants.coralPivotOutPos;
-                pivotCutPower = false;
             }
 
             // Pivot manual override
             if(buttonBox.getRawAxis(MechConstants.overrideJoystick_X_ID) > 0.5){
-                pivotTarget++;
-                pivotCutPower = false;
+                pivotTarget += 50;
             } else if(buttonBox.getRawAxis(MechConstants.overrideJoystick_X_ID) < -0.5){
-                pivotTarget--;
-                pivotCutPower = false;
+                pivotTarget -= 50;
             }
 
             // Elevator manual override
             if(buttonBox.getRawAxis(MechConstants.overrideJoystick_Y_ID) < -0.5){
-                elevatorTarget++;
-                elevatorCutPower = false;
+                elevatorTarget += 35;
             } else if(buttonBox.getRawAxis(MechConstants.overrideJoystick_Y_ID) > 0.5){
-                elevatorTarget--;
-                elevatorCutPower = false;
+                elevatorTarget -= 35;
             }
 
         } else {
             // Autonomous Loop Code Here
 
-            if(!pivotCutPower){
-                pivotMotor.set(pivotPID.calculate(pivotEncoder.getPosition(), pivotTarget) + MechConstants.coralPivotF);
-            }
-    
-            if(pivotTarget == MechConstants.coralPivotDownPos){
-                if(pivotEncoder.getPosition() < MechConstants.coralPivotDownPos + MechConstants.coralPivotTolerance &&
-                    pivotEncoder.getPosition() > MechConstants.coralPivotDownPos - MechConstants.coralPivotTolerance){
-                    pivotCutPower = true;
-                }
-            }
-    
-            if(pivotCutPower){
+            // Pivot PID
+            if(pivotTarget != MechConstants.coralPivotDownPos){
+                pivotMotor.set(pivotPID.calculate(pivotPos, pivotTarget) + MechConstants.coralPivotF);
+            } else {
                 pivotMotor.set(0.0);
             }
 
+
             // Elevator PID
 
-            if(!elevatorCutPower){
-                elevatorMotor.set(elevatorPID.calculate(elevatorMotor.getPosition().getValueAsDouble(), elevatorTarget));
+            if(elevatorTarget != MechConstants.elevatorDownPos || elevatorPos <= MechConstants.elevatorDownPos - 500){
+                elevatorMotor.set(elevatorPID.calculate(elevatorPos, elevatorTarget) + MechConstants.elevatorF);
+            } else {
+              elevatorMotor.set(0.0);
+              System.out.println("MOTOR STOPPED");
             }
-    
-                if(elevatorTarget == MechConstants.elevatorDownPos){
-                    if(elevatorMotor.getPosition().getValueAsDouble() < MechConstants.elevatorDownPos + MechConstants.elevatorTolerance &&
-                    elevatorMotor.getPosition().getValueAsDouble() > MechConstants.elevatorDownPos - MechConstants.elevatorTolerance){
-                        pivotCutPower = true;
-                    }
-                }
-    
-                if(elevatorCutPower){
-                    elevatorMotor.set(0.0);
-                }
 
 
             // Elevator and Pivot position targeter
             if(elevatorAutoPos.equals("Down")){
                 elevatorTarget = MechConstants.elevatorDownPos;
-                pivotTarget = MechConstants.coralPivotDownPos;
+                pivotTarget = MechConstants.coralPivotInPos;
             } else
             if(elevatorAutoPos.equals("Source")){
                 elevatorTarget = MechConstants.elevatorSourcePos;
-                elevatorCutPower = false;
                 pivotTarget = MechConstants.coralPivotInPos;
-                pivotCutPower = false;
             } else
             if(elevatorAutoPos.equals("L1")){
                 elevatorTarget = MechConstants.elevatorL1Pos;
-                elevatorCutPower = false;
                 pivotTarget = MechConstants.coralPivotOutPos;
-                pivotCutPower = false;
             } else
             if(elevatorAutoPos.equals("L2")){
                 elevatorTarget = MechConstants.elevatorL2Pos;
-                elevatorCutPower = false;
                 pivotTarget = MechConstants.coralPivotOutPos;
-                pivotCutPower = false;
             } else
             if(elevatorAutoPos.equals("L3")){
                 elevatorTarget = MechConstants.elevatorL3Pos;
-                elevatorCutPower = false;
                 pivotTarget = MechConstants.coralPivotOutPos;
-                pivotCutPower = false;
             } else
             if(elevatorAutoPos.equals("L4")){
-                System.out.println("IT'S WORKING!!!!!!!!!!!!!!!");
                 elevatorTarget = MechConstants.elevatorL4Pos;
-                elevatorCutPower = false;
                 pivotTarget = MechConstants.coralPivotOutPos;
-                pivotCutPower = false;
             }
 
         }
