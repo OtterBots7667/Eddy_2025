@@ -5,23 +5,33 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.cscore.UsbCamera;
 
 public class Robot extends TimedRobot {
   public static boolean teleopHasStarted = false;
+  public static boolean autoHasStarted = false;
 
   private Command m_autonomousCommand;
 
   private final RobotContainer m_robotContainer;
 
+  UsbCamera myCamera;
+
   public Robot() {
     m_robotContainer = new RobotContainer();
+    
+    myCamera = CameraServer.startAutomaticCapture();
+    myCamera.setResolution(1280, 720);
   }
 
   int chooserClock = 0; // Clock for printing out the chosen autonomous routine
   String oldAutoChosen = "waiting...";
   String newAutoChosen = "waiting...";
+
 
   @Override
   public void robotPeriodic() {
@@ -38,6 +48,13 @@ public class Robot extends TimedRobot {
     oldAutoChosen = RobotContainer.autoChooser.getSelected().getName();
 
     chooserClock++;
+
+
+    SmartDashboard.putNumber("Elevator Motor Power", m_robotContainer.myCoral.elevatorMotor.get());
+    SmartDashboard.putNumber("Pivot Motor Power", m_robotContainer.myCoral.pivotMotor.get());
+    SmartDashboard.putNumber("Climb Motor Power", m_robotContainer.myClimb.climbMotor.get());
+
+
 
   }
 
@@ -58,6 +75,8 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.schedule();
     }
+
+    autoHasStarted = true;
   }
 
   @Override

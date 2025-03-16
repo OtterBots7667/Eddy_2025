@@ -25,15 +25,17 @@ static int eieio = 0;
     private static final Joystick buttonBox = MechConstants.buttonBox;
 
     final PIDController pivotPID = new PIDController(MechConstants.coralPivotP, MechConstants.coralPivotI, MechConstants.coralPivotD);
-    final SparkMax pivotMotor = new SparkMax(MechConstants.coralPivotMotorID, MotorType.kBrushless);
+    public final SparkMax pivotMotor = new SparkMax(MechConstants.coralPivotMotorID, MotorType.kBrushless);
     final SparkMax intakeMotor = new SparkMax(MechConstants.coralIntakeMotorID, MotorType.kBrushless);
     final RelativeEncoder pivotEncoder = pivotMotor.getEncoder();
 
     final PIDController elevatorPID = new PIDController(MechConstants.elevatorP, MechConstants.elevatorI, MechConstants.elevatorD);
-    final TalonFX elevatorMotor = new TalonFX(MechConstants.elevatorMotorID);
+    public final TalonFX elevatorMotor = new TalonFX(MechConstants.elevatorMotorID);
 
     private double pivotTarget = 0.0;
     private double elevatorTarget = 0.0;
+
+    double posOfDown = MechConstants.coralPivotInPos;
 
     double pivotPos = 0.0;
     double elevatorPos = 0.0;
@@ -89,6 +91,7 @@ static int eieio = 0;
     public void periodic(){
         
         boolean teleopHasStarted = Robot.teleopHasStarted;
+        boolean autoHasStarted = Robot.autoHasStarted;
 
         pivotPos = pivotEncoder.getPosition() * 1000;
 
@@ -123,16 +126,21 @@ static int eieio = 0;
 
             if(elevatorTarget != MechConstants.elevatorDownPos || elevatorPos <= MechConstants.elevatorDownPos - 500){
                 elevatorMotor.set(elevatorPID.calculate(elevatorPos, elevatorTarget) + MechConstants.elevatorF);
+                posOfDown = MechConstants.coralPivotInPos;
             } else {
-              elevatorMotor.set(0.0);
-              System.out.println("MOTOR STOPPED");
+                elevatorMotor.set(0.0);
+                posOfDown = MechConstants.coralPivotDownPos;
+                System.out.println("MOTORS STOPPED");
             }
 
+            if(elevatorTarget == MechConstants.elevatorDownPos){
+                pivotTarget = posOfDown;
+            }
 
             // Elevator and Pivot position targeter
             if(buttonBox.getRawButton(MechConstants.elevatorDownButtonID)){
                 elevatorTarget = MechConstants.elevatorDownPos;
-                pivotTarget = MechConstants.coralPivotInPos;
+                pivotTarget = posOfDown;
             } else
             if(buttonBox.getRawButton(MechConstants.elevatorSourceButtonID)){
                 elevatorTarget = MechConstants.elevatorSourcePos;
@@ -169,7 +177,7 @@ static int eieio = 0;
                 elevatorTarget -= 35;
             }
 
-        } else {
+        } else  if(autoHasStarted){
             // Autonomous Loop Code Here
 
             // Pivot PID
@@ -184,16 +192,22 @@ static int eieio = 0;
 
             if(elevatorTarget != MechConstants.elevatorDownPos || elevatorPos <= MechConstants.elevatorDownPos - 500){
                 elevatorMotor.set(elevatorPID.calculate(elevatorPos, elevatorTarget) + MechConstants.elevatorF);
+                posOfDown = MechConstants.coralPivotInPos;
             } else {
-              elevatorMotor.set(0.0);
-              System.out.println("MOTOR STOPPED");
+                elevatorMotor.set(0.0);
+                posOfDown = MechConstants.coralPivotDownPos;
+                System.out.println("MOTORS STOPPED");
+            }
+
+            if(elevatorTarget == MechConstants.elevatorDownPos){
+                pivotTarget = posOfDown;
             }
 
 
             // Elevator and Pivot position targeter
             if(elevatorAutoPos.equals("Down")){
                 elevatorTarget = MechConstants.elevatorDownPos;
-                pivotTarget = MechConstants.coralPivotInPos;
+                pivotTarget = posOfDown;
             } else
             if(elevatorAutoPos.equals("Source")){
                 elevatorTarget = MechConstants.elevatorSourcePos;

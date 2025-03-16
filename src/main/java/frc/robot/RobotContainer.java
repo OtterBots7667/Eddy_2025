@@ -16,7 +16,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
 
-import frc.robot.commands.LimelightDefaultCommand;
 import frc.robot.commands.AlgaeDefaultCommand;
 import frc.robot.commands.CoralDefaultCommand;
 import frc.robot.commands.ClimbDefaultCommand;
@@ -25,7 +24,6 @@ import frc.robot.subsystems.Swerve;
 import frc.robot.subsystems.Algae;
 import frc.robot.subsystems.Coral;
 import frc.robot.subsystems.Climb;
-import frc.robot.subsystems.Limelight;
 import com.pathplanner.lib.auto.NamedCommands;
 import com.pathplanner.lib.commands.PathPlannerAuto;
 
@@ -35,17 +33,14 @@ public class RobotContainer {
 
 
     // Declaring subsystems & default commands (This took me way too long to figure out how to do - CL 2/9/25)
-    private final Algae algae = new Algae();
-    AlgaeDefaultCommand algy = new AlgaeDefaultCommand(algae);
+    final Algae myAlgae = new Algae();
+    AlgaeDefaultCommand algy = new AlgaeDefaultCommand(myAlgae);
 
-    private final Climb climb = new Climb();
-    ClimbDefaultCommand climy = new ClimbDefaultCommand(climb);
+    final Climb myClimb = new Climb();
+    ClimbDefaultCommand climy = new ClimbDefaultCommand(myClimb);
 
-    private final Coral coral = new Coral();
-    CoralDefaultCommand cory = new CoralDefaultCommand(coral);
-
-    private final Limelight limelight = new Limelight();
-    LimelightDefaultCommand limy = new LimelightDefaultCommand(limelight);
+    final Coral myCoral = new Coral();
+    CoralDefaultCommand cory = new CoralDefaultCommand(myCoral);
 
 
     private double MaxSpeed = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond); // kSpeedAt12Volts desired top speed
@@ -72,15 +67,15 @@ public class RobotContainer {
     public RobotContainer() {
 
         
-        NamedCommands.registerCommand("Elevator Down", coral.elevatorDownCommand());
-        NamedCommands.registerCommand("Elevator to Source", coral.elevatorSourceCommand());
-        NamedCommands.registerCommand("Elevator to L1", coral.elevatorL1Command());
-        NamedCommands.registerCommand("Elevator to L2", coral.elevatorL2Command());
-        NamedCommands.registerCommand("Elevator to L3", coral.elevatorL3Command());
-        NamedCommands.registerCommand("Elevator to L4", coral.elevatorL4Command());
-        NamedCommands.registerCommand("Intake", coral.coralIntakeCommand());
-        NamedCommands.registerCommand("Outake", coral.coralOutakeCommand());
-        NamedCommands.registerCommand("Intake Off", coral.coralStopIntakeCommand());
+        NamedCommands.registerCommand("Elevator Down", myCoral.elevatorDownCommand());
+        NamedCommands.registerCommand("Elevator to Source", myCoral.elevatorSourceCommand());
+        NamedCommands.registerCommand("Elevator to L1", myCoral.elevatorL1Command());
+        NamedCommands.registerCommand("Elevator to L2", myCoral.elevatorL2Command());
+        NamedCommands.registerCommand("Elevator to L3", myCoral.elevatorL3Command());
+        NamedCommands.registerCommand("Elevator to L4", myCoral.elevatorL4Command());
+        NamedCommands.registerCommand("Intake", myCoral.coralIntakeCommand());
+        NamedCommands.registerCommand("Outake", myCoral.coralOutakeCommand());
+        NamedCommands.registerCommand("Intake Off", myCoral.coralStopIntakeCommand());
 
 
         // Loading Autos (I think that's what this does, idk)
@@ -89,17 +84,16 @@ public class RobotContainer {
       PathPlannerAuto leftStart2Coral = new PathPlannerAuto("Left Start, 2 Coral");
 
 
-        algae.setDefaultCommand(algy);
-        coral.setDefaultCommand(cory);
-        climb.setDefaultCommand(climy);
-        limelight.setDefaultCommand(limy); // climy and limy are twins :)
+        myAlgae.setDefaultCommand(algy);
+        myCoral.setDefaultCommand(cory);
+        myClimb.setDefaultCommand(climy);
 
         autoChooser = AutoBuilder.buildAutoChooser("Default");
         SmartDashboard.putData("Auto Mode", autoChooser);
         configureBindings();
 
-        coral.resetEncoders();
-        climb.resetEncoder();
+        myCoral.resetEncoders();
+        myClimb.resetEncoder();
     }
 
     private void configureBindings() {

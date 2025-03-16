@@ -20,7 +20,7 @@ static int eieio = 0;
     private static final Joystick buttonBox = MechConstants.buttonBox;
     boolean climbyTime = false;
     boolean teleopHasStarted = Robot.teleopHasStarted;
-    TalonFX climbMotor = new TalonFX(MechConstants.climbMotorID);
+    public TalonFX climbMotor = new TalonFX(MechConstants.climbMotorID);
 
 
     public void resetEncoder(){

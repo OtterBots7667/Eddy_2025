@@ -43,8 +43,8 @@ public class MechConstants {
     public static final int climbMotorID = 14;
 
     /* - - - - - - - - - Motor Speeds - - - - - - - - - */
-    public static final double coralIntakeSpeed = 0.3;
-    public static final double coralOutakeSpeed = -0.3;
+    public static final double coralIntakeSpeed = 1.0;
+    public static final double coralOutakeSpeed = -1.0;
 
     public static final double algaeIntakeSpeed = 0.3;
     public static final double algaeOutakeSpeed = -0.3;
@@ -78,7 +78,7 @@ public class MechConstants {
     public static final double algaeExtendPos = 1.0;
 
     public static final double elevatorDownPos = -450;
-    public static final double elevatorSourcePos = -450;
+    public static final double elevatorSourcePos = -550;
     public static final double elevatorL1Pos = -1800;
     public static final double elevatorL2Pos = -1800;
     public static final double elevatorL3Pos = -3800;
