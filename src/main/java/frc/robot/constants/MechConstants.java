@@ -52,7 +52,7 @@ public class MechConstants {
     public static final double climbSpeed = -0.2;
 
     /* - - - - - - - - - Motor PID Constants - - - - - - - - - */
-    public static final double elevatorP = 0.0002;   // 0.0004 - changed bc bearing slipping
+    public static final double elevatorP = 0.0004;
     public static final double elevatorI = 0.0;
     public static final double elevatorD = 0.0;
     public static final double elevatorF = -0.03;
@@ -70,19 +70,20 @@ public class MechConstants {
     /* - - - - - - - - - Motor Position Constants - - - - - - - - - */
     public static final double climbDownPos = -30;
 
-    public static final double coralPivotInPos = -18000;
-    public static final double coralPivotOutPos = -11000;
+    public static final double coralPivotInPos = -19000;
+    public static final double coralPivotOutPos = -8500;
+    public static final double coralPivotL4Pos = -11500;
     public static final double coralPivotDownPos = -2500.0;
 
     public static final double algaeRetractPos = 0.0;
     public static final double algaeExtendPos = 1.0;
 
-    public static final double elevatorDownPos = -450;
-    public static final double elevatorSourcePos = -550;
-    public static final double elevatorL1Pos = -1800;
-    public static final double elevatorL2Pos = -1800;
-    public static final double elevatorL3Pos = -3800;
-    public static final double elevatorL4Pos = -7900;
+    public static final double elevatorDownPos = -300;
+    public static final double elevatorSourcePos = -425;
+    public static final double elevatorL1Pos = -1700;
+    public static final double elevatorL2Pos = -1700;
+    public static final double elevatorL3Pos = -4600;
+    public static final double elevatorL4Pos = -7875;
 
     /* - - - - - - - - - Limelight Constants - - - - - - - - - */
     

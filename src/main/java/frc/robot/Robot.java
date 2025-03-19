@@ -51,7 +51,11 @@ public class Robot extends TimedRobot {
 
 
     SmartDashboard.putNumber("Elevator Motor Power", m_robotContainer.myCoral.elevatorMotor.get());
+    SmartDashboard.putNumber("Elevator Position", m_robotContainer.myCoral.elevatorMotor.getPosition().getValueAsDouble() * 100);
+    SmartDashboard.putNumber("Elevator Target", m_robotContainer.myCoral.elevatorTarget);
     SmartDashboard.putNumber("Pivot Motor Power", m_robotContainer.myCoral.pivotMotor.get());
+    SmartDashboard.putNumber("Pivot Position", m_robotContainer.myCoral.pivotEncoder.getPosition() * 1000);
+    SmartDashboard.putNumber("Pivot Target", m_robotContainer.myCoral.pivotTarget);
     SmartDashboard.putNumber("Climb Motor Power", m_robotContainer.myClimb.climbMotor.get());
 
 
