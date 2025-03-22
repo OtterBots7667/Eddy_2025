@@ -19,7 +19,7 @@
 		<location x="35" y="30"/>
 	</widget>
 	<widget field="Climb Motor Power" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="495" y="34"/>
+		<location x="517" y="22"/>
 	</widget>
 	<widget field="Pivot Motor Power" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="238" y="7"/>
@@ -44,15 +44,21 @@
 		<property name="Image File" value="C:\Users\lambc\Downloads\Ottie2019.png"/>
 		<property name="Maintain Aspect Ratio" value="true"/>
 	</static-widget>
+	<widget field="limelight_PipelineName" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="970" y="81"/>
+	</widget>
+	<widget field="limelight_Interface" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="959" y="78"/>
+	</widget>
+	<widget field="limelight_Stream" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="978" y="111"/>
+	</widget>
 </dashboard>
 <live-window>
 </live-window>
-	<hidden field="limelight_Interface"/>
-	<hidden field="limelight_PipelineName"/>
 	<hidden field="Module 2"/>
 	<hidden field="Module 3"/>
 	<hidden field="Module 0"/>
 	<hidden field="Alerts"/>
 	<hidden field="Module 1"/>
-	<hidden field="limelight_Stream"/>
 </xml>

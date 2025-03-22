@@ -111,7 +111,7 @@ public class RobotContainer {
         driveStick.button(1).whileTrue(drivetrain.applyRequest(() -> brake));
 
         steerStick.button(12).whileTrue(drivetrain.applyRequest(() ->
-            point.withModuleDirection(new Rotation2d(-driveStick.getY(), -driveStick.getX()))
+            point.withModuleDirection(new Rotation2d(-Robot.driveSpeedY, -Robot.driveSpeedX))
         ));
 
         // // Run SysId routines when holding back/start and X/Y.

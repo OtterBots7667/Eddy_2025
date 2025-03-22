@@ -69,7 +69,7 @@ static int eieio = 0;
     }
 
     public Command coralIntakeCommand() {
-        return Commands.runOnce(() -> intakeMotor.set(MechConstants.coralIntakeSpeed));
+        return Commands.runOnce(() -> intakeMotor.set(MechConstants.slowCoralIntakeSpeed));
     }
 
     public Command coralOutakeCommand() {
@@ -108,6 +108,8 @@ static int eieio = 0;
             } else
             if(buttonBox.getRawButton(MechConstants.coralOutakeButtonID)){
                 intakeMotor.set(MechConstants.coralOutakeSpeed);
+            } else if(buttonBox.getRawButton(MechConstants.slowCoralIntakeButtonID)){
+                intakeMotor.set(MechConstants.slowCoralIntakeSpeed);
             } else {
                 intakeMotor.set(0.0);
             }

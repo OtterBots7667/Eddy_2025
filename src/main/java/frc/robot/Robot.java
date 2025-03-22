@@ -4,10 +4,12 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.constants.MechConstants;
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.cscore.UsbCamera;
 
@@ -20,6 +22,13 @@ public class Robot extends TimedRobot {
   private final RobotContainer m_robotContainer;
 
   UsbCamera myCamera;
+
+  public static double driveSpeedY = 0.0;
+
+  public static double driveSpeedX = 0.0;
+
+  private Joystick driveStick = MechConstants.driveStick;
+
 
   public Robot() {
     m_robotContainer = new RobotContainer();
@@ -37,6 +46,19 @@ public class Robot extends TimedRobot {
   public void robotPeriodic() {
 
     CommandScheduler.getInstance().run(); 
+
+    if(driveStick.getRawAxis(0) >= 0.0){
+      driveSpeedY = driveStick.getRawAxis(1) * driveStick.getRawAxis(1);
+    } else {
+      driveSpeedY = driveStick.getRawAxis(1) * driveStick.getRawAxis(1) * -1;
+    }
+
+    if(driveStick.getRawAxis(1) >= 0.0){
+      driveSpeedX = driveStick.getRawAxis(0) * driveStick.getRawAxis(0);
+    } else {
+      driveSpeedX = driveStick.getRawAxis(0) * driveStick.getRawAxis(0) * -1;
+    }
+    
 
 
     newAutoChosen = RobotContainer.autoChooser.getSelected().getName();

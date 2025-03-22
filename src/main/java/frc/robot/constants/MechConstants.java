@@ -11,6 +11,7 @@ public class MechConstants {
 
     /* - - - - - - - - - Button IDs - - - - - - - - - */
     public static final int coralIntakeButtonID = 8;
+    public static final int slowCoralIntakeButtonID = 10;
     public static final int coralOutakeButtonID = 7;
     public static final int coralPivotResetButtonID = 11;
 
@@ -45,6 +46,7 @@ public class MechConstants {
 
     /* - - - - - - - - - Motor Speeds - - - - - - - - - */
     public static final double coralIntakeSpeed = 1.0;
+    public static final double slowCoralIntakeSpeed = 0.35;
     public static final double coralOutakeSpeed = -1.0;
 
     public static final double algaeIntakeSpeed = 0.3;
