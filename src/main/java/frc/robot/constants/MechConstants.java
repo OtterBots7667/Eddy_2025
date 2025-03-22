@@ -27,7 +27,7 @@ public class MechConstants {
     public static final int overrideJoystick_X_ID = 1;
     public static final int overrideJoystick_Y_ID = 0;
 
-    public static final int climbButtonID = 12;
+    public static final int climbButtonID = 7667;
 
     public static final int limelightRightButtonID = 4;
     public static final int limelightLeftButtonID = 3;
@@ -68,7 +68,7 @@ public class MechConstants {
     public static final double algaePivotF = 0.0;
 
     /* - - - - - - - - - Motor Position Constants - - - - - - - - - */
-    public static final double climbDownPos = -30;
+    public static final double climbDownPos = -35;
 
     public static final double coralPivotInPos = -19000;
     public static final double coralPivotOutPos = -8500;

@@ -42,7 +42,7 @@ static int eieio = 0;
             }
             
             if(climbyTime && (climbMotor.getPosition().getValueAsDouble() > MechConstants.climbDownPos)){
-                climbMotor.set(MechConstants.climbSpeed);
+                // climbMotor.set(MechConstants.climbSpeed); // commented for SF Regional - no climb :(
             } else {
                 climbMotor.set(0.0);
             }
