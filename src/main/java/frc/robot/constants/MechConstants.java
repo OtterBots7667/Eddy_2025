@@ -12,6 +12,7 @@ public class MechConstants {
     /* - - - - - - - - - Button IDs - - - - - - - - - */
     public static final int coralIntakeButtonID = 8;
     public static final int coralOutakeButtonID = 7;
+    public static final int coralPivotResetButtonID = 11;
 
     public static final int elevatorDownButtonID = 6;
     public static final int elevatorSourceButtonID = 5;
@@ -72,18 +73,21 @@ public class MechConstants {
 
     public static final double coralPivotInPos = -19000;
     public static final double coralPivotOutPos = -8500;
-    public static final double coralPivotL4Pos = -11500;
+    public static final double coralPivotL4Pos = -11000;
     public static final double coralPivotDownPos = -2500.0;
+    public static final double coralPivotResetPos = -19500;
+    public static final double coralPivotManualMargin = 200;
 
     public static final double algaeRetractPos = 0.0;
     public static final double algaeExtendPos = 1.0;
 
     public static final double elevatorDownPos = -300;
-    public static final double elevatorSourcePos = -425;
+    public static final double elevatorSourcePos = -350;
     public static final double elevatorL1Pos = -1700;
     public static final double elevatorL2Pos = -1700;
     public static final double elevatorL3Pos = -4600;
     public static final double elevatorL4Pos = -7875;
+    public static final double elevatorManualMargin = 45;
 
     /* - - - - - - - - - Limelight Constants - - - - - - - - - */
     
