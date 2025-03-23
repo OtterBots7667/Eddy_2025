@@ -73,12 +73,12 @@ public class MechConstants {
     /* - - - - - - - - - Motor Position Constants - - - - - - - - - */
     public static final double climbDownPos = -35;
 
-    public static final double coralPivotInPos = -18000;
+    public static final double coralPivotInPos = -16500;
     public static final double coralPivotOutPos = -8500;
     public static final double coralPivotL4Pos = -10250;
     public static final double coralPivotDownPos = -2500.0;
     public static final double coralPivotResetPos = -19500;
-    public static final double coralPivotManualMargin = 200;
+    public static final double coralPivotManualMargin = 250;
 
     public static final double algaeRetractPos = 0.0;
     public static final double algaeExtendPos = 1.0;
@@ -88,7 +88,7 @@ public class MechConstants {
     public static final double elevatorL1Pos = -1700;
     public static final double elevatorL2Pos = -1700;
     public static final double elevatorL3Pos = -4600;
-    public static final double elevatorL4Pos = -7875;
-    public static final double elevatorManualMargin = 45;
+    public static final double elevatorL4Pos = -7825;
+    public static final double elevatorManualMargin = 50;
 
 }
