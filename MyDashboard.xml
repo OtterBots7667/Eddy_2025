@@ -1,16 +1,10 @@
 <xml version="1.0">
 <dashboard>
-	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.CameraServerViewer">
-		<location x="78" y="84"/>
-		<width>564</width>
-		<height>414</height>
-		<property name="Camera Choice" value="limelight"/>
-	</static-widget>
 	<widget field="Pivot Target" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="268" y="51"/>
+		<location x="268" y="52"/>
 	</widget>
 	<widget field="Pivot Position" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="262" y="28"/>
+		<location x="262" y="30"/>
 	</widget>
 	<widget field="Elevator Target" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="41" y="52"/>
@@ -19,10 +13,10 @@
 		<location x="35" y="30"/>
 	</widget>
 	<widget field="Climb Motor Power" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="517" y="22"/>
+		<location x="464" y="30"/>
 	</widget>
 	<widget field="Pivot Motor Power" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="238" y="7"/>
+		<location x="238" y="8"/>
 	</widget>
 	<widget field="Elevator Motor Power" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="11" y="8"/>
@@ -31,9 +25,9 @@
 		<location x="9" y="82"/>
 	</widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.CameraServerViewer">
-		<location x="909" y="2"/>
-		<width>294</width>
-		<height>493</height>
+		<location x="905" y="15"/>
+		<width>320</width>
+		<height>488</height>
 		<property name="Degrees Rotation" value="270"/>
 		<property name="Camera Choice" value="USB Camera 0"/>
 	</static-widget>
@@ -45,14 +39,20 @@
 		<property name="Maintain Aspect Ratio" value="true"/>
 	</static-widget>
 	<widget field="limelight_PipelineName" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="970" y="81"/>
+		<location x="80" y="473"/>
 	</widget>
 	<widget field="limelight_Interface" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="959" y="78"/>
+		<location x="280" y="473"/>
 	</widget>
 	<widget field="limelight_Stream" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="978" y="111"/>
+		<location x="460" y="473"/>
 	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.CameraServerViewer">
+		<location x="78" y="84"/>
+		<width>564</width>
+		<height>414</height>
+		<property name="Camera Choice" value="limelight"/>
+	</static-widget>
 </dashboard>
 <live-window>
 </live-window>

@@ -29,7 +29,7 @@ public class MechConstants {
     public static final int overrideJoystick_X_ID = 1;
     public static final int overrideJoystick_Y_ID = 0;
 
-    public static final int climbButtonID = 7667;
+    public static final int climbButtonID = 99;
 
     public static final int limelightRightButtonID = 4;
     public static final int limelightLeftButtonID = 3;
@@ -73,9 +73,9 @@ public class MechConstants {
     /* - - - - - - - - - Motor Position Constants - - - - - - - - - */
     public static final double climbDownPos = -35;
 
-    public static final double coralPivotInPos = -19000;
+    public static final double coralPivotInPos = -18000;
     public static final double coralPivotOutPos = -8500;
-    public static final double coralPivotL4Pos = -11000;
+    public static final double coralPivotL4Pos = -10250;
     public static final double coralPivotDownPos = -2500.0;
     public static final double coralPivotResetPos = -19500;
     public static final double coralPivotManualMargin = 200;
@@ -90,8 +90,5 @@ public class MechConstants {
     public static final double elevatorL3Pos = -4600;
     public static final double elevatorL4Pos = -7875;
     public static final double elevatorManualMargin = 45;
-
-    /* - - - - - - - - - Limelight Constants - - - - - - - - - */
-    
 
 }

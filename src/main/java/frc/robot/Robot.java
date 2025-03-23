@@ -34,7 +34,7 @@ public class Robot extends TimedRobot {
     m_robotContainer = new RobotContainer();
     
     myCamera = CameraServer.startAutomaticCapture();
-    myCamera.setResolution(1280, 720);
+    myCamera.setResolution(360, 240);
   }
 
   int chooserClock = 0; // Clock for printing out the chosen autonomous routine
