@@ -7,43 +7,43 @@
         {
           "type": "path",
           "data": {
-            "pathName": "C2 Start to Reef"
+            "pathName": "B1 Start to Reef"
           }
         },
         {
           "type": "named",
           "data": {
-            "name": "Outake"
+            "name": "Elevator to L4"
           }
         },
         {
           "type": "wait",
           "data": {
-            "waitTime": 2.0
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Intake Off"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Elevator Down"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "C2 Reef to Source"
+            "waitTime": 2.5
           }
         },
         {
           "type": "named",
           "data": {
             "name": "Intake"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "B1 Scooch Forward"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.5
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Outake"
           }
         },
         {
@@ -59,33 +59,9 @@
           }
         },
         {
-          "type": "named",
-          "data": {
-            "name": "Elevator Down"
-          }
-        },
-        {
           "type": "path",
           "data": {
-            "pathName": "C2 Source to Reef"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Outake"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 2.0
-          }
-        },
-        {
-          "type": "named",
-          "data": {
-            "name": "Intake Off"
+            "pathName": "B1 Scooch Back"
           }
         },
         {

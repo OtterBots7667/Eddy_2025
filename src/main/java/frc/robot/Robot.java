@@ -58,7 +58,6 @@ public class Robot extends TimedRobot {
     } else {
       driveSpeedX = driveStick.getRawAxis(0) * driveStick.getRawAxis(0) * -1;
     }
-    
 
 
     newAutoChosen = RobotContainer.autoChooser.getSelected().getName();
@@ -79,8 +78,6 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("Pivot Position", m_robotContainer.myCoral.pivotEncoder.getPosition() * 1000);
     SmartDashboard.putNumber("Pivot Target", m_robotContainer.myCoral.pivotTarget);
     SmartDashboard.putNumber("Climb Motor Power", m_robotContainer.myClimb.climbMotor.get());
-
-
 
   }
 

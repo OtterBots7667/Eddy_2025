@@ -4,12 +4,12 @@
     {
       "anchor": {
         "x": 5.6,
-        "y": 3.88
+        "y": 4.172
       },
       "prevControl": null,
       "nextControl": {
         "x": 5.85,
-        "y": 3.88
+        "y": 4.172
       },
       "isLocked": false,
       "linkedName": null
@@ -17,15 +17,15 @@
     {
       "anchor": {
         "x": 5.8,
-        "y": 3.88
+        "y": 4.1723
       },
       "prevControl": {
         "x": 5.55,
-        "y": 3.88
+        "y": 4.1723
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "Reef H"
     }
   ],
   "rotationTargets": [],

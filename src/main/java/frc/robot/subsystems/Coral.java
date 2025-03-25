@@ -5,12 +5,10 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Robot;
 import frc.robot.constants.MechConstants;
-
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.RelativeEncoder;
-
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj.Joystick;
 
@@ -41,7 +39,6 @@ static int eieio = 0;
     double elevatorPos = 0.0;
 
     String elevatorAutoPos = "";
-
 
 
     public Command elevatorDownCommand() {

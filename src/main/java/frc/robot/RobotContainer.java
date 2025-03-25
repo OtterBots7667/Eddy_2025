@@ -5,36 +5,25 @@
 package frc.robot;
 
 import static edu.wpi.first.units.Units.*;
-
 import com.ctre.phoenix6.swerve.SwerveModule.DriveRequestType;
 import com.ctre.phoenix6.swerve.SwerveRequest;
 import com.pathplanner.lib.auto.AutoBuilder;
-
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandJoystick;
-
-import frc.robot.commands.AlgaeDefaultCommand;
 import frc.robot.commands.CoralDefaultCommand;
 import frc.robot.commands.ClimbDefaultCommand;
 import frc.robot.constants.TunerConstants;
 import frc.robot.subsystems.Swerve;
-import frc.robot.subsystems.Algae;
 import frc.robot.subsystems.Coral;
 import frc.robot.subsystems.Climb;
 import com.pathplanner.lib.auto.NamedCommands;
-import com.pathplanner.lib.commands.PathPlannerAuto;
 
 public class RobotContainer {
 
-    
-
-
     // Declaring subsystems & default commands (This took me way too long to figure out how to do - CL 2/9/25)
-    final Algae myAlgae = new Algae();
-    AlgaeDefaultCommand algy = new AlgaeDefaultCommand(myAlgae);
 
     final Climb myClimb = new Climb();
     ClimbDefaultCommand climy = new ClimbDefaultCommand(myClimb);
@@ -42,10 +31,8 @@ public class RobotContainer {
     final Coral myCoral = new Coral();
     CoralDefaultCommand cory = new CoralDefaultCommand(myCoral);
 
-
     private double MaxSpeed = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond); // kSpeedAt12Volts desired top speed
     private double MaxAngularRate = RotationsPerSecond.of(0.75).in(RadiansPerSecond); // 3/4 of a rotation per second max angular velocity
-
 
     /* Setting up bindings for necessary control of the swerve drive platform */
     private final SwerveRequest.FieldCentric drive = new SwerveRequest.FieldCentric()
@@ -65,7 +52,6 @@ public class RobotContainer {
     public static SendableChooser<Command> autoChooser;
 
     public RobotContainer() {
-
         
         NamedCommands.registerCommand("Elevator Down", myCoral.elevatorDownCommand());
         NamedCommands.registerCommand("Elevator to Source", myCoral.elevatorSourceCommand());
@@ -77,18 +63,10 @@ public class RobotContainer {
         NamedCommands.registerCommand("Outake", myCoral.coralOutakeCommand());
         NamedCommands.registerCommand("Intake Off", myCoral.coralStopIntakeCommand());
 
-
-        // Loading Autos (I think that's what this does, idk)
-      PathPlannerAuto defaultPath = new PathPlannerAuto("Default");
-      PathPlannerAuto midStart2Coral = new PathPlannerAuto("Mid Start, 1 Coral");
-      PathPlannerAuto leftStart2Coral = new PathPlannerAuto("Left Start, 2 Coral");
-
-
-        myAlgae.setDefaultCommand(algy);
         myCoral.setDefaultCommand(cory);
         myClimb.setDefaultCommand(climy);
 
-        autoChooser = AutoBuilder.buildAutoChooser("Default");
+        autoChooser = AutoBuilder.buildAutoChooser("No Auto");
         SmartDashboard.putData("Auto Mode", autoChooser);
         configureBindings();
 

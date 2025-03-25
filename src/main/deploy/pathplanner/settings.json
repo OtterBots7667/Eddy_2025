@@ -5,13 +5,11 @@
   "pathFolders": [
     "A",
     "B1",
-    "C1",
-    "C2",
-    "D1",
-    "D2",
     "B2"
   ],
-  "autoFolders": [],
+  "autoFolders": [
+    "New Folder"
+  ],
   "defaultMaxVel": 5.21,
   "defaultMaxAccel": 11.1,
   "defaultMaxAngVel": 540.0,
