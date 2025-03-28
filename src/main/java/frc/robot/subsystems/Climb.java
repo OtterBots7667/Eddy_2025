@@ -22,6 +22,7 @@ static int eieio = 0;
     boolean teleopHasStarted = Robot.teleopHasStarted;
     public TalonFX climbMotor = new TalonFX(MechConstants.climbMotorID);
 
+    boolean climbGood = false;
 
     public void resetEncoder(){
         climbMotor.setPosition(0.0);
@@ -41,13 +42,15 @@ static int eieio = 0;
                 climbyTime = true;
             }
             
-            if(climbyTime && (climbMotor.getPosition().getValueAsDouble() > MechConstants.climbDownPos)){
+            if(climbyTime && (climbMotor.getPosition().getValueAsDouble() > MechConstants.climbDownPos) && !climbGood){
                 climbMotor.set(MechConstants.climbSpeed);
+            } else if(climbyTime){
+                climbMotor.set(0.0);
+                climbGood = true;
             } else {
                 climbMotor.set(0.0);
             }
 
         }
     }
-
 }

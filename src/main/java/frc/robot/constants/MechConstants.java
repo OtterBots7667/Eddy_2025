@@ -34,8 +34,8 @@ public class MechConstants {
     public static final int climbMotorID = 14;
 
     /* - - - - - - - - - Motor Speeds - - - - - - - - - */
-    public static final double coralIntakeSpeed = 1.0;
-    public static final double slowCoralIntakeSpeed = 0.35;
+    public static final double coralIntakeSpeed = 0.35;
+    public static final double slowCoralIntakeSpeed = 0.15;
     public static final double coralOutakeSpeed = -1.0;
 
     public static final double climbSpeed = -0.2;
@@ -52,11 +52,11 @@ public class MechConstants {
     public static final double coralPivotF = -0.015;
 
     /* - - - - - - - - - Motor Position Constants - - - - - - - - - */
-    public static final double climbDownPos = -35;
+    public static final double climbDownPos = -40;
 
     public static final double coralPivotInPos = -16500;
     public static final double coralPivotOutPos = -8500;
-    public static final double coralPivotL4Pos = -10250;
+    public static final double coralPivotL4Pos = -10000;
     public static final double coralPivotDownPos = -2500.0;
     public static final double coralPivotResetPos = -19500;
     public static final double coralPivotManualMargin = 250;
