@@ -48,15 +48,15 @@ public class Robot extends TimedRobot {
     CommandScheduler.getInstance().run(); 
 
     if(driveStick.getRawAxis(0) >= 0.0){
-      driveSpeedY = driveStick.getRawAxis(1) * driveStick.getRawAxis(1);
+      driveSpeedY = Math.pow(driveStick.getRawAxis(1), MechConstants.driveExponent);
     } else {
-      driveSpeedY = driveStick.getRawAxis(1) * driveStick.getRawAxis(1) * -1;
+      driveSpeedY = -Math.abs(Math.pow(driveStick.getRawAxis(1), MechConstants.driveExponent));
     }
 
     if(driveStick.getRawAxis(1) >= 0.0){
-      driveSpeedX = driveStick.getRawAxis(0) * driveStick.getRawAxis(0);
+      driveSpeedX = Math.pow(driveStick.getRawAxis(0), MechConstants.driveExponent);
     } else {
-      driveSpeedX = driveStick.getRawAxis(0) * driveStick.getRawAxis(0) * -1;
+      driveSpeedX = -Math.abs(Math.pow(driveStick.getRawAxis(0), MechConstants.driveExponent));
     }
 
 
@@ -78,6 +78,7 @@ public class Robot extends TimedRobot {
     SmartDashboard.putNumber("Pivot Position", m_robotContainer.myCoral.pivotEncoder.getPosition() * 1000);
     SmartDashboard.putNumber("Pivot Target", m_robotContainer.myCoral.pivotTarget);
     SmartDashboard.putNumber("Climb Motor Power", m_robotContainer.myClimb.climbMotor.get());
+    SmartDashboard.putNumber("Climb Position", m_robotContainer.myClimb.climbMotor.getPosition().getValueAsDouble());
 
   }
 

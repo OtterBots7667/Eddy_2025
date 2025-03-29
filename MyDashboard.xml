@@ -1,5 +1,11 @@
 <xml version="1.0">
 <dashboard>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Image">
+		<location x="16" y="66"/>
+		<width>585</width>
+		<height>441</height>
+		<property name="Image File" value="C:\Users\lambc\Downloads\Ocean Border.jpg"/>
+	</static-widget>
 	<widget field="Pivot Target" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="268" y="52"/>
 	</widget>
@@ -13,7 +19,10 @@
 		<location x="35" y="30"/>
 	</widget>
 	<widget field="Climb Motor Power" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="464" y="30"/>
+		<location x="450" y="20"/>
+	</widget>
+	<widget field="Climb Position" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="473" y="42"/>
 	</widget>
 	<widget field="Pivot Motor Power" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="238" y="8"/>
@@ -22,23 +31,16 @@
 		<location x="11" y="8"/>
 	</widget>
 	<widget field="Auto Mode" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
-		<location x="598" y="86"/>
+		<location x="665" y="11"/>
 	</widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.CameraServerViewer">
-		<location x="905" y="15"/>
-		<width>320</width>
-		<height>488</height>
-		<property name="Degrees Rotation" value="270"/>
-		<property name="Camera Choice" value="USB Camera 0"/>
-	</static-widget>
-	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.CameraServerViewer">
-		<location x="21" y="81"/>
-		<width>564</width>
+		<location x="29" y="81"/>
+		<width>556</width>
 		<height>414</height>
 		<property name="Camera Choice" value="limelight"/>
 	</static-widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Image">
-		<location x="684" y="112"/>
+		<location x="593" y="128"/>
 		<width>224</width>
 		<height>395</height>
 		<property name="Image File" value="C:\Users\lambc\Downloads\Ottie2019.png"/>
@@ -53,6 +55,12 @@
 	<widget field="limelight_PipelineName" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="130" y="239"/>
 	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.CameraServerViewer">
+		<location x="828" y="76"/>
+		<width>433</width>
+		<height>390</height>
+		<property name="Camera Choice" value="USB Camera 0"/>
+	</static-widget>
 </dashboard>
 <live-window>
 </live-window>

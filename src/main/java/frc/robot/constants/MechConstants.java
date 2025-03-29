@@ -24,7 +24,7 @@ public class MechConstants {
     public static final int overrideJoystick_X_ID = 1;
     public static final int overrideJoystick_Y_ID = 0;
 
-    public static final int climbButtonID = 12;
+    public static final int climbButtonID = 99; // climb diabled, should be button 12
 
     /* - - - - - - - - - Motor IDs - - - - - - - - - */
     public static final int elevatorMotorID = 13;
@@ -39,6 +39,8 @@ public class MechConstants {
     public static final double coralOutakeSpeed = -1.0;
 
     public static final double climbSpeed = -0.2;
+
+    public static final double driveExponent = 2.0; // driveSpeed = driveStick to the power of this
 
     /* - - - - - - - - - Motor PID Constants - - - - - - - - - */
     public static final double elevatorP = 0.0004;

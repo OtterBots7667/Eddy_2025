@@ -7,7 +7,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "B2 Start to Reef"
+            "pathName": "B1 Start to Reef"
           }
         },
         {
@@ -31,7 +31,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "B2 Scooch Forward"
+            "pathName": "B1 Scooch Forward"
           }
         },
         {
@@ -61,25 +61,31 @@
         {
           "type": "path",
           "data": {
-            "pathName": "B2 Scooch Back"
+            "pathName": "B1 Scooch Back"
           }
         },
         {
           "type": "named",
           "data": {
-            "name": "Elevator Down"
+            "name": "Elevator to Source"
           }
         },
         {
           "type": "wait",
           "data": {
-            "waitTime": 0.75
+            "waitTime": 0.5
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "B2 to Source"
+            "pathName": "B1 to Right Source"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Intake"
           }
         }
       ]

@@ -67,7 +67,7 @@
         {
           "type": "named",
           "data": {
-            "name": "Elevator Down"
+            "name": "Elevator to Source"
           }
         },
         {
@@ -79,7 +79,13 @@
         {
           "type": "path",
           "data": {
-            "pathName": "B1 to Source"
+            "pathName": "B1 to Right Source"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Intake"
           }
         }
       ]
