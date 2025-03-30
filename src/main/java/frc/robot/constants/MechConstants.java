@@ -8,23 +8,24 @@ public class MechConstants {
     public static final Joystick buttonBox = new Joystick(2);
     public static final Joystick driveStick = new Joystick(0);
     
-    /* - - - - - - - - - Button IDs - - - - - - - - - */
-    public static final int coralIntakeButtonID = 8;
-    public static final int slowCoralIntakeButtonID = 10;
-    public static final int coralOutakeButtonID = 7;
-    public static final int coralPivotResetButtonID = 11;
+    /* - - - - - - - - - Button IDs - - - - - - - - - */    //        COMMENTS ARE FOR JEFF'S BUTTON BOX
+    public static final int coralIntakeButtonID = 8;     // 7
+    public static final int slowCoralIntakeButtonID = 10;     // 99
+    public static final int coralOutakeButtonID = 7;     // 8
+    public static final int coralPivotResetButtonID = 11;     // 99
 
-    public static final int elevatorDownButtonID = 6;
-    public static final int elevatorSourceButtonID = 5;
-    public static final int elevatorL1ButtonID = 2;
-    public static final int elevatorL2ButtonID = 2;
-    public static final int elevatorL3ButtonID = 3;
-    public static final int elevatorL4ButtonID = 4;
+    public static final int elevatorDownButtonID = 6;    // 99
+    public static final int elevatorSourceButtonID = 5;    // 1
+    public static final int elevatorL1ButtonID = 2;    // 99
+    public static final int elevatorL2ButtonID = 2;    // 2
+    public static final int elevatorL3ButtonID = 3;    // 3
+    public static final int elevatorL4ButtonID = 4;    // 4
 
-    public static final int overrideJoystick_X_ID = 1;
-    public static final int overrideJoystick_Y_ID = 0;
+    public static final int overrideJoystick_X_ID = 1;    // 0
+    public static final int overrideJoystick_Y_ID = 0;    // 1
 
-    public static final int climbButtonID = 99; // climb diabled, should be button 12
+    public static final int climbButtonID = 99;    // 99
+    public static final int climbConfirmButtonID = 9;    // 99
 
     /* - - - - - - - - - Motor IDs - - - - - - - - - */
     public static final int elevatorMotorID = 13;
@@ -54,7 +55,7 @@ public class MechConstants {
     public static final double coralPivotF = -0.015;
 
     /* - - - - - - - - - Motor Position Constants - - - - - - - - - */
-    public static final double climbDownPos = -40;
+    public static final double climbDownPos = -35;
 
     public static final double coralPivotInPos = -16500;
     public static final double coralPivotOutPos = -8500;

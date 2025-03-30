@@ -38,7 +38,7 @@ static int eieio = 0;
 
             /* - - - - - - - - - Teleop Loop Code Here - - - - - - - - - */
 
-            if(buttonBox.getRawButton(MechConstants.climbButtonID)){
+            if(buttonBox.getRawButton(MechConstants.climbButtonID) && buttonBox.getRawButton(MechConstants.climbConfirmButtonID)){
                 climbyTime = true;
             }
             
